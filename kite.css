@@ -1,0 +1,270 @@
+@charset "UTF-8";
+/** 
+ * Kite CSS
+ * Light weight & robust Layout CSS Framework.
+ * http://necolas.github.io/griddle/
+ * http://csswizardry.com/csswizardry-grids/
+ */
+/**
+ * Kite Variables
+ */
+/**
+ * If you are building a non-responsive site but would still like to use
+ * csswizardry-grids, set this to ‘false’:
+ */
+/**
+ * Set the spacing between your grid items.
+ */
+/**
+ * Would you like Sass’ silent classes, or regular CSS classes?
+ */
+/**
+ * Would you like push and pull classes enabled?
+ */
+/**
+ * Using `inline-block` means that the grid items need their whitespace removing
+ * in order for them to work correctly. Set the following to true if you are
+ * going to achieve this by manually removing/commenting out any whitespace in
+ * your HTML yourself.
+ *
+ * Setting this to false invokes a hack which cannot always be guaranteed,
+ * please see the following for more detail:
+ *
+ * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
+ * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
+ */
+/**
+ * グリッドを構成するclass名を任意の名前に
+ */
+/**
+ * You do not need to edit anything from this line onward; csswizardry-grids is
+ * good to go. Happy griddin’!
+ */
+/**
+ * Define your breakpoints. The first value is the prefix that shall be used for
+ * your classes (e.g. `.palm--one-half`), the second value is the media query
+ * that the breakpoint fires at.
+ */
+/**
+ * Define which namespaced breakpoints you would like to generate for each of
+ * widths, push and pull. This is handy if you only need pull on, say, desk, or
+ * you only need a new width breakpoint at mobile sizes. It allows you to only
+ * compile as much CSS as you need. All are turned on by default, but you can
+ * add and remove breakpoints at will.
+ *
+ * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
+ * have been set to ‘true’.
+ */
+/*
+* Kite Utility
+*/
+.grid__cell--1 {
+  width: 80px !important;
+}
+
+.grid__cell--2 {
+  width: 160px !important;
+}
+
+.grid__cell--3 {
+  width: 240px !important;
+}
+
+.grid__cell--4 {
+  width: 320px !important;
+}
+
+.grid__cell--5 {
+  width: 400px !important;
+}
+
+.grid__cell--6 {
+  width: 480px !important;
+}
+
+.grid__cell--7 {
+  width: 560px !important;
+}
+
+.grid__cell--8 {
+  width: 640px !important;
+}
+
+.grid__cell--9 {
+  width: 720px !important;
+}
+
+.grid__cell--10 {
+  width: 800px !important;
+}
+
+.grid__cell--11 {
+  width: 880px !important;
+}
+
+.grid__cell--12 {
+  width: 960px !important;
+}
+
+/**
+ * Kite Grid Core
+ * http://necolas.github.io/griddle/
+ * 
+ */
+/**
+ * Kite Grid Container
+ */
+.grid-container {
+  width: 960px;
+}
+
+/**
+ * Kite Grid Container
+ *
+ * 子要素にはグリッドのセルが置かれることを前提とする。
+ *
+ * 1. グリッドに影響するmargin,paddingのリセットをする
+ * 2. グリッドにリスト要素が使われた場合のlist-styleのクリアをする
+ * 3. 子要素のinline-blockのwhitespaceを取り除く
+ * 4. [3]によって生じる要素の重なりを微調整する
+ * 5. Protect against WebKit bug with optimizelegibility.
+ * 6. Remove inter-unit whitespace that appears between `inline-block` child
+ *    elements. Work for all non-monospace font-families.  If you're using a
+ *    monospace base font, you will need to set the `grid` font-family to
+ *   `sans-serif` and then redeclare the monospace font on the `grid__cell`
+ *    objects.
+ */
+.grid {
+  display: table;
+  /* [4] */
+  table-layout: fixed;
+  /* [4] */
+  width: 100%;
+  list-style: none;
+  /* [2] */
+  margin: 0;
+  /* [1] */
+  padding: 0;
+  /* [1] */
+  letter-spacing: -0.30em;
+  /* [3] */
+  text-rendering: optimizespeed;
+  /* [5] */
+  /*font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;*/
+  /* [6] */
+}
+
+/* Opera 12.x hack */
+.opera-only:-o-prefocus,
+.grid {
+  word-spacing: -0.43em;
+  /* [3] */
+}
+
+/**
+ * Kite Grid Cell
+ *
+ * 1. inline-blockによって中央寄せなど柔軟なレイアウトができる
+ * 2. カラム感の隙間を指定する。
+ * 3. paddingの値でwidthを拡張しないようにする
+ * 4. グリッドのコンテナ側で使用したwhitespaceのハックの値をデフォルトに戻す
+ */
+.grid__cell {
+  display: inline-block;
+  /* [1] */
+  *display: inline;
+  /* [1] for IE 6,7 */
+  *zoom: 1;
+  /* [1] for IE 6,7 */
+  padding-left: 10px;
+  /* [2] */
+  padding-right: 10px;
+  /* [2] */
+  width: 100%;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  /* [3] */
+  -moz-box-sizing: border-box;
+  /* [3] */
+  box-sizing: border-box;
+  /* [3] */
+  letter-spacing: normal;
+  /* [4] */
+  word-spacing: normal;
+  /* [4] */
+  text-rendering: auto;
+  /* [4] */
+  /*font-family: sans-serif;*/
+  /* [6] */
+}
+
+/**
+ * Kite Grid Container Modifier
+ *
+ */
+.grid--center {
+  text-align: center;
+}
+
+.grid--right {
+  text-align: right;
+}
+
+.grid--justify {
+  /* Expetimental */
+  display: block;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+  /* for IE */
+}
+.grid--justify:after {
+  display: inline-block;
+  content: "";
+  width: 100%;
+  height: 0;
+}
+.grid--justify > .grid__cell {
+  height: 0;
+}
+
+.grid--middle {
+  vertical-align: middle;
+}
+
+.grid--bottom {
+  vertical-align: bottom;
+}
+
+.grid--full {
+  /* Expetimental */
+  display: block;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.grid--fill {
+  /* Expetimental */
+}
+.grid--fill > .grid__cell {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/**
+ * Kite Grid Cell Modifier
+ *
+ */
+.grid__cell--center {
+  text-align: center;
+}
+
+.grid__cell--right {
+  text-align: right;
+}
+
+/**
+ * Setting
+ */
+.grid__cell-- {
+  width: 100%;
+}

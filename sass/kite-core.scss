@@ -1,0 +1,126 @@
+/**
+ * Kite Grid Core
+ * http://necolas.github.io/griddle/
+ * 
+ */
+
+/**
+ * Kite Grid Container
+ */
+
+#{$class-type}#{$grid-name}-container {
+  width: $container;
+}
+
+/**
+ * Kite Grid Container
+ *
+ * 子要素にはグリッドのセルが置かれることを前提とする。
+ *
+ * 1. グリッドに影響するmargin,paddingのリセットをする
+ * 2. グリッドにリスト要素が使われた場合のlist-styleのクリアをする
+ * 3. 子要素のinline-blockのwhitespaceを取り除く
+ * 4. [3]によって生じる要素の重なりを微調整する
+ * 5. Protect against WebKit bug with optimizelegibility.
+ * 6. Remove inter-unit whitespace that appears between `inline-block` child
+ *    elements. Work for all non-monospace font-families.  If you're using a
+ *    monospace base font, you will need to set the `grid` font-family to
+ *   `sans-serif` and then redeclare the monospace font on the `grid__#{$cell-name}`
+ *    objects.
+ */
+#{$class-type}#{$grid-name} {
+	display: table;                 /* [4] */
+	table-layout: fixed;            /* [4] */
+	width: 100%;
+    list-style:none;                /* [2] */
+    margin:0;                       /* [1] */
+    padding:0;                      /* [1] */
+    letter-spacing: -0.30em;        /* [3] */
+	text-rendering: optimizespeed;  /* [5] */
+    /*font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;*/ /* [6] */
+}
+
+/* Opera 12.x hack */
+.opera-only:-o-prefocus,            /* [3] for Opera 12.x*/
+#{$class-type}#{$grid-name} {
+    word-spacing:-0.43em;           /* [3] */
+}
+
+/**
+ * Kite Grid Cell
+ *
+ * 1. inline-blockによって中央寄せなど柔軟なレイアウトができる
+ * 2. カラム感の隙間を指定する。
+ * 3. paddingの値でwidthを拡張しないようにする
+ * 4. グリッドのコンテナ側で使用したwhitespaceのハックの値をデフォルトに戻す
+ */
+#{$class-type}#{$grid-name}__#{$cell-name} {
+    display:inline-block;           /* [1] */
+    *display: inline;               /* [1] for IE 6,7 */
+    *zoom: 1;                       /* [1] for IE 6,7 */
+    padding-left: ($gutter / 2);    /* [2] */
+    padding-right: ($gutter / 2);   /* [2] */
+    width: 100%;
+    vertical-align:top;             
+    -webkit-box-sizing:border-box;  /* [3] */
+       -moz-box-sizing:border-box;  /* [3] */
+            box-sizing:border-box;  /* [3] */
+    letter-spacing:normal;          /* [4] */
+    word-spacing:normal;            /* [4] */
+    text-rendering: auto;           /* [4] */
+    /*font-family: sans-serif;*/    /* [6] */
+}
+
+/**
+ * Kite Grid Container Modifier
+ *
+ */
+#{$class-type}#{$grid-name}--center {
+	text-align: center;
+}
+#{$class-type}#{$grid-name}--right {
+	text-align: right;
+}
+#{$class-type}#{$grid-name}--justify { /* Expetimental */
+	display: block;
+	text-align: justify;
+	text-justify: distribute-all-lines; /* for IE */
+	&:after {
+		display: inline-block;
+		content: "";
+		width: 100%;
+		height: 0;
+	}
+	& > #{$class-type}#{$grid-name}__#{$cell-name} {
+		height: 0;
+	}
+}
+#{$class-type}#{$grid-name}--middle {
+	vertical-align: middle;
+}
+#{$class-type}#{$grid-name}--bottom {
+	vertical-align: bottom;
+}
+#{$class-type}#{$grid-name}--full {/* Expetimental */
+	display: block;
+	// width: auto;
+	margin-left: -($gutter / 2);
+	margin-right: -($gutter / 2);
+}
+#{$class-type}#{$grid-name}--fill {/* Expetimental */
+	& > #{$class-type}#{$grid-name}__#{$cell-name} {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+}
+
+/**
+ * Kite Grid Cell Modifier
+ *
+ */
+#{$class-type}#{$grid-name}__#{$cell-name}--center {
+	text-align: center;
+}
+#{$class-type}#{$grid-name}__#{$cell-name}--right {
+	text-align: right;
+}

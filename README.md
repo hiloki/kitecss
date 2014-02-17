@@ -1,4 +1,3 @@
-kitecss
-=======
+# Kite CSS
 
-Light weight &amp; robust CSS Framework.
+Light weight & robust layout helper CSS Framework. 
