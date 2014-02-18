@@ -6,11 +6,5 @@
  */
 
 @import "kite-variables";
-@import "kite-utility";
 @import "kite-core";
-
-/**
- * Setting
- */
-
-@include kite-unit-build();
+@import "kite-utility";

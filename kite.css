@@ -55,57 +55,6 @@
  * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
  * have been set to ‘true’.
  */
-/*
-* Kite Utility
-*/
-.grid__cell--1 {
-  width: 80px !important;
-}
-
-.grid__cell--2 {
-  width: 160px !important;
-}
-
-.grid__cell--3 {
-  width: 240px !important;
-}
-
-.grid__cell--4 {
-  width: 320px !important;
-}
-
-.grid__cell--5 {
-  width: 400px !important;
-}
-
-.grid__cell--6 {
-  width: 480px !important;
-}
-
-.grid__cell--7 {
-  width: 560px !important;
-}
-
-.grid__cell--8 {
-  width: 640px !important;
-}
-
-.grid__cell--9 {
-  width: 720px !important;
-}
-
-.grid__cell--10 {
-  width: 800px !important;
-}
-
-.grid__cell--11 {
-  width: 880px !important;
-}
-
-.grid__cell--12 {
-  width: 960px !important;
-}
-
 /**
  * Kite Grid Core
  * http://necolas.github.io/griddle/
@@ -262,9 +211,56 @@
   text-align: right;
 }
 
-/**
- * Setting
- */
-.grid__cell-- {
-  width: 100%;
+/*
+* Kite Utility
+*/
+/*
+* Build unit rules
+*/
+.grid__cell--1 {
+  width: 80px;
+}
+
+.grid__cell--2 {
+  width: 160px;
+}
+
+.grid__cell--3 {
+  width: 240px;
+}
+
+.grid__cell--4 {
+  width: 320px;
+}
+
+.grid__cell--5 {
+  width: 400px;
+}
+
+.grid__cell--6 {
+  width: 480px;
+}
+
+.grid__cell--7 {
+  width: 560px;
+}
+
+.grid__cell--8 {
+  width: 640px;
+}
+
+.grid__cell--9 {
+  width: 720px;
+}
+
+.grid__cell--10 {
+  width: 800px;
+}
+
+.grid__cell--11 {
+  width: 880px;
+}
+
+.grid__cell--12 {
+  width: 960px;
 }

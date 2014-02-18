@@ -2,25 +2,14 @@
 * Kite Utility
 */
 
-@mixin kite-unit-build($unit: null) {
-	#{$class-type}#{$grid-name}__#{$cell-name}--#{$unit} {
-		width: 100%;
-	}
-}
+/*
+* Build unit rules
+*/
 
-// $unit: カラム数
-// $gutter: ガター幅（任意）
-// $column: カラム幅（任意）
-// $container: カラム数とガター幅に応じたコンテナ幅。Fluidなレイアウトの計算で利用する。
-
-$unit: 12 !default;
-$gutter: 20px !default;
-$column: 60px !default;
-$container: ($column + $gutter) * $unit !default;
-$fluid: false !default;
 $result: null;
 $results: ();
 
+// Build class rules
 @for $i from 1 through $unit {
   @if $column > 0 {
   	$result: ($column + $gutter) * $i;
@@ -28,9 +17,28 @@ $results: ();
   	$result: (100% / $unit) * $i;
   	$container: auto;
   }
+
   $results: append($results, $result);
 
   #{$class-type}#{$grid-name}__#{$cell-name}--#{$i} {
-  	width: nth($results, $i) !important;
+  	width: nth($results, $i);
   }
+}
+
+// Build function
+@function kite-unit($i) {
+  @if $column > 0 {
+    $result: ($column + $gutter) * $i;
+  } @else {
+    $result: (100% / $unit) * $i;
+    $container: auto;
+  }
+
+  $results: append($results, $result);
+
+  @if $i > $unit {
+    $i: $unit;
+    @warn "$i Over $unit count.";
+  }
+  @return nth($results, $i);
 }

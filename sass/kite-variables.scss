@@ -67,7 +67,6 @@ $breakpoints: (
     'desk' '(min-width: 1024px)'
 )!default;
 
-
 /**
  * Define which namespaced breakpoints you would like to generate for each of
  * widths, push and pull. This is handy if you only need pull on, say, desk, or
@@ -81,4 +80,19 @@ $breakpoints: (
 $breakpoint-has-widths: ('palm', 'lap', 'portable', 'desk')!default;
 $breakpoint-has-push:   ('palm', 'lap', 'portable', 'desk')!default;
 $breakpoint-has-pull:   ('palm', 'lap', 'portable', 'desk')!default;
+
+
+// $unit:            カラム数
+// $gutter:          ガター幅（任意）
+// $column:          カラム幅（任意）
+// $container:       カラム数とガター幅に応じたコンテナ幅。
+//                   `#{$class-type}#{$grid-name}-container`の幅にもなる。
+//                   また`$fluid:true`時のパーセント計算にも使われる。
+// $fluid(bool):     カラムをパーセント化。 
+
+$unit: 12 !default;
+$gutter: 20px !default;
+$column: 60px !default;
+$container: ($column + $gutter) * $unit !default;
+$fluid: false !default;
 
