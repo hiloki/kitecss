@@ -13,18 +13,18 @@ $kite-results: ();
 
 // Build unit mixins
 @function kite-unit($i) {
-  @if $column > 0 {
-    $kite-result: ($column + $gutter) * $i;
-  } @else {
-    $kite-result: (100% / $unit) * $i;
-    $container: auto;
-  }
+    @if $column > 0 {
+        $kite-result: ($column + $gutter) * $i;
+    } @else {
+        $kite-result: (100% / $unit) * $i;
+        $container: auto;
+    }
 
-  $kite-results: append($kite-results, $kite-result);
+    $kite-results: append($kite-results, $kite-result);
 
-  @if $i > $unit {
-    $i: $unit;
-    @warn "$i Over $unit count.";
-  }
-  @return nth($kite-results, $i);
+    @if $i > $unit {
+        $i: $unit;
+        @warn "$i Over $unit count.";
+    }
+    @return nth($kite-results, $i);
 }

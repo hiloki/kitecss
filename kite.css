@@ -90,7 +90,6 @@
  */
 /**
  * Kite OOCSS Selectors
- *
  */
 .grid {
   display: table;
@@ -143,7 +142,6 @@
 
 /**
  * Kite Grid Container Modifier
- *
  */
 .grid--center {
   text-align: center;
@@ -176,7 +174,6 @@
 
 /**
  * Kite Grid Cell Modifier
- *
  */
 .grid__cell--center {
   text-align: center;

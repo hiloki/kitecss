@@ -3,21 +3,21 @@
  * ---------------------------------- */
 
 @if $semantic == false {
-  /**
-   * Build class unit-width rules with OOCSS Selectors
-   *
-   * ```
-   * .grid__cell--1 {
-   *   width: 80px;
-   * }
-   * .grid__cell--12 {
-   *   width: 960px;
-   * }
-   * ```
-   */
-  @for $i from 1 through $unit {
-    #{$class-type}#{$grid-name}__#{$cell-name}--#{$i} {
-      width: kite-unit($i);
+    /**
+     * Build class unit-width rules with OOCSS Selectors
+     *
+     * ```
+     * .grid__cell--1 {
+     *   width: 80px;
+     * }
+     * .grid__cell--12 {
+     *   width: 960px;
+     * }
+     * ```
+     */
+    @for $i from 1 through $unit {
+        #{$class-type}#{$grid-name}__#{$cell-name}--#{$i} {
+            width: kite-unit($i);
+        }
     }
-  }
 }
