@@ -31,6 +31,17 @@ $use-markup-fix: false !default;
 $semantic: false !default;
 
 /**
+ * Gridを構成するclassセレクタをSassのplaceholderセレクタにしたい場合は`true`にする。
+ */
+$use-silent-classes: false !default;
+
+$class-type: unquote(".");
+
+@if $use-silent-classes == true{
+    $class-type: unquote("%");
+}
+
+/**
  * グリッドを構成するclass名を任意の名前にする。
  * 
  * ```
@@ -43,22 +54,13 @@ $semantic: false !default;
  *
  * $grid-name(str): グリッドのベースとなるクラス名
  * $grid-cell(str): グリッドのセルのクラス名
+ * $element-delimiter: BEM Elementの区切り
+ * $modifier-delimiter: BEM Modifierの区切り
  */
 $grid-name: 'grid' !default;
 $cell-name: 'cell' !default;
 $element-delimiter: '__' !default;
 $modifier-delimiter: '--' !default;
-
-/**
- * Gridを構成するclassセレクタをSassのplaceholderセレクタにしたい場合は`true`にする。
- */
-$use-silent-classes: false !default;
-
-$class-type: unquote(".");
-
-@if $use-silent-classes == true{
-    $class-type: unquote("%");
-}
 
 /**
  * カラム、ガターの幅や挙動を制御する。

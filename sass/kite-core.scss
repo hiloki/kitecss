@@ -15,7 +15,7 @@
  * 6. Remove inter-unit whitespace that appears between `inline-block` child
  *    elements. Work for all non-monospace font-families.  If you're using a
  *    monospace base font, you will need to set the `grid` font-family to
- *   `sans-serif` and then redeclare the monospace font on the `grid__#{$cell-name}`
+ *   `sans-serif` and then redeclare the monospace font on the `grid#{$element-delimiter}#{$cell-name}`
  *    objects.
  */
 
@@ -113,33 +113,33 @@
       @include kite-grid-row;
   }
 
-  #{$class-type}#{$grid-name}__#{$cell-name} {
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name} {
       @include kite-grid-cell();
   }
 
   /**
    * Kite Grid Container Modifier
    */
-  #{$class-type}#{$grid-name}--center {
+  #{$class-type}#{$grid-name}#{$modifier-delimiter}center {
       text-align: center;
   }
-  #{$class-type}#{$grid-name}--left {
+  #{$class-type}#{$grid-name}#{$modifier-delimiter}left {
       text-align: left;
   }
-  #{$class-type}#{$grid-name}--right {
+  #{$class-type}#{$grid-name}#{$modifier-delimiter}right {
       text-align: right;
   }
-  #{$class-type}#{$grid-name}--top {
+  #{$class-type}#{$grid-name}#{$modifier-delimiter}top {
       vertical-align: top;
   }
-  #{$class-type}#{$grid-name}--middle {
+  #{$class-type}#{$grid-name}#{$modifier-delimiter}middle {
       vertical-align: middle;
   }
-  #{$class-type}#{$grid-name}--bottom {
+  #{$class-type}#{$grid-name}#{$modifier-delimiter}bottom {
       vertical-align: bottom;
   }
-  #{$class-type}#{$grid-name}--fill {
-      & > #{$class-type}#{$grid-name}__#{$cell-name} {
+  #{$class-type}#{$grid-name}#{$modifier-delimiter}fill {
+      & > #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name} {
           padding-left: 0 !important;
           padding-right: 0 !important;
       }
@@ -148,22 +148,22 @@
   /**
    * Kite Grid Cell Modifier
    */
-  #{$class-type}#{$grid-name}__#{$cell-name}--center {
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}center {
       text-align: center;
   }
-  #{$class-type}#{$grid-name}__#{$cell-name}--left {
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}left {
       text-align: left;
   }
-  #{$class-type}#{$grid-name}__#{$cell-name}--left {
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}left {
       text-align: left;
   }
-  #{$class-type}#{$grid-name}__#{$cell-name}--top {
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}top {
       vertical-align: top;
   }
-  #{$class-type}#{$grid-name}__#{$cell-name}--middle {
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}middle {
       vertical-align: middle;
   }
-  #{$class-type}#{$grid-name}__#{$cell-name}--bottom {
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}bottom {
       vertical-align: bottom;
   }
 }

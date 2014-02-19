@@ -33,6 +33,9 @@
  * $semantic(bool): OOCSSなclassを生成するかどうか
  */
 /**
+ * Gridを構成するclassセレクタをSassのplaceholderセレクタにしたい場合は`true`にする。
+ */
+/**
  * グリッドを構成するclass名を任意の名前にする。
  * 
  * ```
@@ -45,9 +48,8 @@
  *
  * $grid-name(str): グリッドのベースとなるクラス名
  * $grid-cell(str): グリッドのセルのクラス名
- */
-/**
- * Gridを構成するclassセレクタをSassのplaceholderセレクタにしたい場合は`true`にする。
+ * $element-delimiter: BEM Elementの区切り
+ * $modifier-delimiter: BEM Modifierの区切り
  */
 /**
  * カラム、ガターの幅や挙動を制御する。
@@ -214,10 +216,10 @@
  * Build class unit-width rules with OOCSS Selectors
  *
  * ```
- * .grid__cell--1 {
+ * .grid#__cell#--1 {
  *   width: 80px;
  * }
- * .grid__cell--12 {
+ * .grid#__cell#--12 {
  *   width: 960px;
  * }
  * ```
