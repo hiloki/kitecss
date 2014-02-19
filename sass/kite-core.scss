@@ -1,27 +1,17 @@
-/**
+/** ------------------------------------
  * Kite Grid Core
- * http://necolas.github.io/griddle/
- * 
- */
-
-/**
- * Kite Container
- */
-
-@mixin kite-container() {
-  width: $container;
-}
+ * ---------------------------------- */
 
 /**
  * Kite Grid Container
  *
  * 子要素にはグリッドのセルが置かれることを前提とする。
  *
- * 1. グリッドに影響するmargin,paddingのリセットをする
- * 2. グリッドにリスト要素が使われた場合のlist-styleのクリアをする
- * 3. 子要素のinline-blockのwhitespaceを取り除く
- * 4. [3]によって生じる要素の重なりを微調整する
- * 5. Protect against WebKit bug with optimizelegibility.
+ * 1. グリッドに影響するmargin,paddingのリセットをする。
+ * 2. グリッドにリスト要素が使われた場合のlist-styleのクリアをする。
+ * 3. 子要素のinline-blockのwhitespaceを取り除く。
+ * 4. [3]によって生じる要素の重なりを微調整する。
+ * 5. WebKitのoptimizelegibilityバグが発生した場合のために記述する。
  * 6. Remove inter-unit whitespace that appears between `inline-block` child
  *    elements. Work for all non-monospace font-families.  If you're using a
  *    monospace base font, you will need to set the `grid` font-family to
@@ -36,8 +26,10 @@
     list-style:none;                /* [2] */
     margin:0;                       /* [1] */
     padding:0;                      /* [1] */
-    letter-spacing: -0.30em;        /* [3] */
-    text-rendering: optimizespeed;  /* [5] */
+    @if $use-markup-fix == false {
+      letter-spacing: -0.30em;        /* [3] */
+      text-rendering: optimizespeed;  /* [5] */
+    }
     /*font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;*/ /* [6] */
     @if $align == 'center' {
       text-align: center;
@@ -84,9 +76,11 @@
     -webkit-box-sizing:border-box;  /* [3] */
        -moz-box-sizing:border-box;  /* [3] */
             box-sizing:border-box;  /* [3] */
-    letter-spacing:normal;          /* [4] */
-    word-spacing:normal;            /* [4] */
-    text-rendering: auto;           /* [4] */
+    @if $use-markup-fix == false {
+      letter-spacing:normal;          /* [4] */
+      word-spacing:normal;            /* [4] */
+      text-rendering: auto;           /* [4] */
+    }
     /*font-family: sans-serif;*/    /* [6] */
     @if $align == 'center' {
       text-align: center;
@@ -109,77 +103,71 @@
 }
 
 
+@if $semantic == false {
+
 /**
  * Kite OOCSS Selectors
  *
  */
 
-#{$class-type}#{$grid-name}-container {
-    @include kite-container;
-}
+  #{$class-type}#{$grid-name} {
+      @include kite-grid-row;
+  }
 
-#{$class-type}#{$grid-name} {
-    @include kite-grid-row;
-}
+  #{$class-type}#{$grid-name}__#{$cell-name} {
+      @include kite-grid-cell();
+  }
 
-/* Opera 12.x hack */
-.opera-only:-o-prefocus,            /* [3] for Opera 12.x*/
-#{$class-type}#{$grid-name} {
-    word-spacing:-0.43em;           /* [3] */
-}
+  /**
+   * Kite Grid Container Modifier
+   *
+   */
+  #{$class-type}#{$grid-name}--center {
+      text-align: center;
+  }
+  #{$class-type}#{$grid-name}--left {
+      text-align: left;
+  }
+  #{$class-type}#{$grid-name}--right {
+      text-align: right;
+  }
+  #{$class-type}#{$grid-name}--top {
+      vertical-align: top;
+  }
+  #{$class-type}#{$grid-name}--middle {
+      vertical-align: middle;
+  }
+  #{$class-type}#{$grid-name}--bottom {
+      vertical-align: bottom;
+  }
+  #{$class-type}#{$grid-name}--fill {
+      & > #{$class-type}#{$grid-name}__#{$cell-name} {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+      }
+  }
 
-#{$class-type}#{$grid-name}__#{$cell-name} {
-    @include kite-grid-cell();
-}
+  /**
+   * Kite Grid Cell Modifier
+   *
+   */
+  #{$class-type}#{$grid-name}__#{$cell-name}--center {
+      text-align: center;
+  }
+  #{$class-type}#{$grid-name}__#{$cell-name}--left {
+      text-align: left;
+  }
+  #{$class-type}#{$grid-name}__#{$cell-name}--left {
+      text-align: left;
+  }
+  #{$class-type}#{$grid-name}__#{$cell-name}--top {
+      vertical-align: top;
+  }
+  #{$class-type}#{$grid-name}__#{$cell-name}--middle {
+      vertical-align: middle;
+  }
+  #{$class-type}#{$grid-name}__#{$cell-name}--bottom {
+      vertical-align: bottom;
+  }
 
-/**
- * Kite Grid Container Modifier
- *
- */
-#{$class-type}#{$grid-name}--center {
-    text-align: center;
-}
-#{$class-type}#{$grid-name}--left {
-    text-align: left;
-}
-#{$class-type}#{$grid-name}--right {
-    text-align: right;
-}
-#{$class-type}#{$grid-name}--top {
-    vertical-align: top;
-}
-#{$class-type}#{$grid-name}--middle {
-    vertical-align: middle;
-}
-#{$class-type}#{$grid-name}--bottom {
-    vertical-align: bottom;
-}
-#{$class-type}#{$grid-name}--fill {
-    & > #{$class-type}#{$grid-name}__#{$cell-name} {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-}
-
-/**
- * Kite Grid Cell Modifier
- *
- */
-#{$class-type}#{$grid-name}__#{$cell-name}--center {
-    text-align: center;
-}
-#{$class-type}#{$grid-name}__#{$cell-name}--left {
-    text-align: left;
-}
-#{$class-type}#{$grid-name}__#{$cell-name}--left {
-    text-align: left;
-}
-#{$class-type}#{$grid-name}__#{$cell-name}--top {
-    vertical-align: top;
-}
-#{$class-type}#{$grid-name}__#{$cell-name}--middle {
-    vertical-align: middle;
-}
-#{$class-type}#{$grid-name}__#{$cell-name}--bottom {
-    vertical-align: bottom;
 }

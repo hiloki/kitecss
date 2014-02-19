@@ -1,8 +1,18 @@
-/*
-* Kite Experimental
-*/
+/** ------------------------------------
+ * Kite Experimental
+ * ---------------------------------- */
 
-// Justify cells
+ /**
+ * Justify cells
+ *
+ * セルの数が少ない、セルの合計がコンテナの幅を満たない場合に、
+ * コンテナ内で均一にするモディファイア。
+ * 
+ * :after擬似要素でコンテナの後に100%幅の要素を差し込むことで実現するが、
+ * その要素の高さが発生してしまうので、それをクリアにしなければいけない。
+  * この問題の対応中。
+ */
+
 #{$class-type}#{$grid-name}--justify { /* Expetimental */
     display: block;
     text-align: justify;
@@ -18,7 +28,15 @@
     }
 }
 
-// Cut outside gutter
+ /**
+ * Cut outside gutter
+ *
+ * コンテナの両サイドにあるガターを取り除く。
+ * 
+ * これを有効とするためには`$fluid: true`であることが必須となるか
+ * 検証中。
+ */
+ 
 #{$class-type}#{$grid-name}--full {/* Expetimental */
     display: block;
     // width: auto;

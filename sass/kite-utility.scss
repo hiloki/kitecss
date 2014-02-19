@@ -1,57 +1,30 @@
-/*
-* Kite Utility
+/** ------------------------------------
+ * Kite Utility
+ * ---------------------------------- */
+
+/**
+* Build unit width
+
+`$unit` `$gutter` `$column`の値に応じてセルの幅をつくる。
 */
 
-/*
-* Build unit 
-*/
-
-$result: null;
-$results: ();
-
-// Build class unit-width rules
-//
-// ```
-// .grid__cell--1 {
-//   width: 80px;
-// }
-// .grid__cell--12 {
-//   width: 960px;
-// }
-// ```
-
-@for $i from 1 through $unit {
-  @if $column > 0 {
-  	$result: ($column + $gutter) * $i;
-  } @else {
-  	$result: (100% / $unit) * $i;
-  	$container: auto;
-  }
-
-  $results: append($results, $result);
-
-  #{$class-type}#{$grid-name}__#{$cell-name}--#{$i} {
-  	width: nth($results, $i);
-  }
-}
+$kite-result: null;
+$kite-results: ();
 
 // Build unit mixins
-// Cell width function
 @function kite-unit($i) {
   @if $column > 0 {
-    $result: ($column + $gutter) * $i;
+    $kite-result: ($column + $gutter) * $i;
   } @else {
-    $result: (100% / $unit) * $i;
+    $kite-result: (100% / $unit) * $i;
     $container: auto;
   }
 
-  $results: append($results, $result);
+  $kite-results: append($kite-results, $kite-result);
 
   @if $i > $unit {
     $i: $unit;
     @warn "$i Over $unit count.";
   }
-  @return nth($results, $i);
+  @return nth($kite-results, $i);
 }
-
-// Cell width function

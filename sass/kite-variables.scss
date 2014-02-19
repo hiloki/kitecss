@@ -1,98 +1,85 @@
-/**
+/** ------------------------------------
  * Kite Variables
- */
+ * ---------------------------------- */
 
 /**
- * If you are building a non-responsive site but would still like to use
- * csswizardry-grids, set this to ‘false’:
- */
-// $responsive:            true!default;
-
-/**
- * Set the spacing between your grid items.
- */
-// $gutter:                10px!default;
-
-/**
- * Would you like Sass’ silent classes, or regular CSS classes?
- */
-$use-silent-classes:    false!default;
-
-/**
- * Would you like push and pull classes enabled?
- */
-// $push:                  false!default;
-// $pull:                  false!default;
-
-
-/**
- * Using `inline-block` means that the grid items need their whitespace removing
- * in order for them to work correctly. Set the following to true if you are
- * going to achieve this by manually removing/commenting out any whitespace in
- * your HTML yourself.
+ * `inline-block`を並べたレイアウトではwhitespaceが発生する。
+ * それを取り除くためのベターな方法の一つとして、要素間に空のコメントを挿入するなどの方法がある。
+ * それ以外にはこのシステムで利用している`letter-spacing`を利用した方法がある。
+ * 本システムではそちらを採用するが、マークアップを使った前者の方法が使えるならば、
+ * `$use-markup-fix`を`false`すること。
  *
- * Setting this to false invokes a hack which cannot always be guaranteed,
- * please see the following for more detail:
- *
+ * この問題については、csswizardry-gridsとそのissueも確認してほしい。
  * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
  * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
+ *
+ * $use-markup-fix(bool): whitespaceをマークアップで解決するかどうか
  */
-$use-markup-fix:        true!default;
+$use-markup-fix: false !default;
 
 /**
- * グリッドを構成するclass名を任意の名前に
+ * OOCSS+BEMルールで構成されたグリッドclassではなく、
+ * セマンティックなclassに対してグリッドのルールのみを適用したい場合は`true`にする。
+ * それによって`.grid__cell {}`といったclassは出力されなくなる。
+ * またセマンティックなclassにグリッドのルールを呼び出したい場合は、
+ * `@include kite-grid-row`というようにmixinを呼び出す。詳しくは`kite-core`を参照。
+ * 
+ * なお`false`の場合でも、`@extend`を使ってセマンティックなclassにグリッドのルールを継承させることはできます。
+ *
+ * $semantic(bool): OOCSSなclassを生成するかどうか
  */
-$grid-name:                'grid'!default;
-$cell-name:                'cell'!default;
+$semantic: false !default;
 
 /**
- * You do not need to edit anything from this line onward; csswizardry-grids is
- * good to go. Happy griddin’!
+ * グリッドを構成するclass名を任意の名前にする。
+ * 
+ * ```
+ * $grid-name: 'grid';
+ * $cell-name: 'item'; // Change
+ * 
+ * .grid { ... }
+ * .grid__item { ... }
+ * ```
+ *
+ * $grid-name(str): グリッドのベースとなるクラス名
+ * $grid-cell(str): グリッドのセルのクラス名
  */
-$class-type:            unquote(".");
+$grid-name: 'grid' !default;
+$cell-name: 'cell' !default;
+$element-delimiter: '__' !default;
+$modifier-delimiter: '--' !default;
+
+/**
+ * Gridを構成するclassセレクタをSassのplaceholderセレクタにしたい場合は`true`にする。
+ */
+$use-silent-classes: false !default;
+
+$class-type: unquote(".");
 
 @if $use-silent-classes == true{
-    $class-type:        unquote("%");
+    $class-type: unquote("%");
 }
 
 /**
- * Define your breakpoints. The first value is the prefix that shall be used for
- * your classes (e.g. `.palm--one-half`), the second value is the media query
- * that the breakpoint fires at.
- */
-$breakpoints: (
-    'palm' '(max-width: 480px)',
-    'lap' '(min-width: 481px) and (max-width: 1023px)',
-    'portable' '(max-width: 1023px)',
-    'desk' '(min-width: 1024px)'
-)!default;
-
-/**
- * Define which namespaced breakpoints you would like to generate for each of
- * widths, push and pull. This is handy if you only need pull on, say, desk, or
- * you only need a new width breakpoint at mobile sizes. It allows you to only
- * compile as much CSS as you need. All are turned on by default, but you can
- * add and remove breakpoints at will.
+ * カラム、ガターの幅や挙動を制御する。
  *
- * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
- * have been set to ‘true’.
+ * $unit(num): カラム数
+ * $gutter(num + unit): ガター幅（任意）
+ * $column(num + unit): カラム幅（任意）
+ * $container(num): カラム数とガター幅に応じたコンテナ幅。
+ *                  デフォルトではカラム数と幅で自動計算される。
+ *                  `#{$class-type}#{$grid-name}-container`の幅にもなる。
+ *                  また`$fluid:true`時のパーセント計算にも使われる。
+ * $fluid(bool): カラム幅をパーセント化。 
  */
-$breakpoint-has-widths: ('palm', 'lap', 'portable', 'desk')!default;
-$breakpoint-has-push:   ('palm', 'lap', 'portable', 'desk')!default;
-$breakpoint-has-pull:   ('palm', 'lap', 'portable', 'desk')!default;
-
-
-// $unit:            カラム数
-// $gutter:          ガター幅（任意）
-// $column:          カラム幅（任意）
-// $container:       カラム数とガター幅に応じたコンテナ幅。
-//                   `#{$class-type}#{$grid-name}-container`の幅にもなる。
-//                   また`$fluid:true`時のパーセント計算にも使われる。
-// $fluid(bool):     カラムをパーセント化。 
 
 $unit: 12 !default;
+
 $gutter: 20px !default;
+
 $column: 60px !default;
+
 $container: ($column + $gutter) * $unit !default;
+
 $fluid: false !default;
 
