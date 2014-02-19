@@ -1,0 +1,27 @@
+/*
+* Kite Experimental
+*/
+
+// Justify cells
+#{$class-type}#{$grid-name}--justify { /* Expetimental */
+    display: block;
+    text-align: justify;
+    text-justify: distribute-all-lines; /* for IE */
+    &:after {
+        display: inline-block;
+        content: "";
+        width: 100%;
+        height: 0;
+    }
+    & > #{$class-type}#{$grid-name}__#{$cell-name} {
+        height: 0;
+    }
+}
+
+// Cut outside gutter
+#{$class-type}#{$grid-name}--full {/* Expetimental */
+    display: block;
+    // width: auto;
+    margin-left: -($gutter / 2);
+    margin-right: -($gutter / 2);
+}

@@ -61,12 +61,8 @@
  * 
  */
 /**
- * Kite Grid Container
+ * Kite Container
  */
-.grid-container {
-  width: 960px;
-}
-
 /**
  * Kite Grid Container
  *
@@ -83,6 +79,22 @@
  *   `sans-serif` and then redeclare the monospace font on the `grid__cell`
  *    objects.
  */
+/**
+ * Kite Grid Cell
+ *
+ * 1. inline-blockによって中央寄せなど柔軟なレイアウトができる
+ * 2. カラム感の隙間を指定する。
+ * 3. paddingの値でwidthを拡張しないようにする
+ * 4. グリッドのコンテナ側で使用したwhitespaceのハックの値をデフォルトに戻す
+ */
+/**
+ * Kite OOCSS Selectors
+ *
+ */
+.grid-container {
+  width: 960px;
+}
+
 .grid {
   display: table;
   /* [4] */
@@ -110,14 +122,6 @@
   /* [3] */
 }
 
-/**
- * Kite Grid Cell
- *
- * 1. inline-blockによって中央寄せなど柔軟なレイアウトができる
- * 2. カラム感の隙間を指定する。
- * 3. paddingの値でwidthを拡張しないようにする
- * 4. グリッドのコンテナ側で使用したwhitespaceのハックの値をデフォルトに戻す
- */
 .grid__cell {
   display: inline-block;
   /* [1] */
@@ -125,9 +129,9 @@
   /* [1] for IE 6,7 */
   *zoom: 1;
   /* [1] for IE 6,7 */
-  padding-left: 10px;
+  padding-left: 0;
   /* [2] */
-  padding-right: 10px;
+  padding-right: 0;
   /* [2] */
   width: 100%;
   vertical-align: top;
@@ -155,25 +159,16 @@
   text-align: center;
 }
 
+.grid--left {
+  text-align: left;
+}
+
 .grid--right {
   text-align: right;
 }
 
-.grid--justify {
-  /* Expetimental */
-  display: block;
-  text-align: justify;
-  text-justify: distribute-all-lines;
-  /* for IE */
-}
-.grid--justify:after {
-  display: inline-block;
-  content: "";
-  width: 100%;
-  height: 0;
-}
-.grid--justify > .grid__cell {
-  height: 0;
+.grid--top {
+  vertical-align: top;
 }
 
 .grid--middle {
@@ -184,16 +179,6 @@
   vertical-align: bottom;
 }
 
-.grid--full {
-  /* Expetimental */
-  display: block;
-  margin-left: -10px;
-  margin-right: -10px;
-}
-
-.grid--fill {
-  /* Expetimental */
-}
 .grid--fill > .grid__cell {
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -207,15 +192,31 @@
   text-align: center;
 }
 
-.grid__cell--right {
-  text-align: right;
+.grid__cell--left {
+  text-align: left;
+}
+
+.grid__cell--left {
+  text-align: left;
+}
+
+.grid__cell--top {
+  vertical-align: top;
+}
+
+.grid__cell--middle {
+  vertical-align: middle;
+}
+
+.grid__cell--bottom {
+  vertical-align: bottom;
 }
 
 /*
 * Kite Utility
 */
 /*
-* Build unit rules
+* Build unit 
 */
 .grid__cell--1 {
   width: 80px;

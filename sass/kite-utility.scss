@@ -3,13 +3,23 @@
 */
 
 /*
-* Build unit rules
+* Build unit 
 */
 
 $result: null;
 $results: ();
 
-// Build class rules
+// Build class unit-width rules
+//
+// ```
+// .grid__cell--1 {
+//   width: 80px;
+// }
+// .grid__cell--12 {
+//   width: 960px;
+// }
+// ```
+
 @for $i from 1 through $unit {
   @if $column > 0 {
   	$result: ($column + $gutter) * $i;
@@ -25,7 +35,8 @@ $results: ();
   }
 }
 
-// Build function
+// Build unit mixins
+// Cell width function
 @function kite-unit($i) {
   @if $column > 0 {
     $result: ($column + $gutter) * $i;
@@ -42,3 +53,5 @@ $results: ();
   }
   @return nth($results, $i);
 }
+
+// Cell width function
