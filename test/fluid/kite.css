@@ -1,0 +1,283 @@
+@charset "UTF-8";
+/** ------------------------------------
+ * Kite CSS
+ * Light weight & robust Layout CSS Framework.
+ * ---------------------------------- */
+/** 
+ * Setting
+ *
+ * Override `kite-variables'.
+ */
+/** 
+ * Import
+ *
+ * Import kite `core'.
+ */
+/** ------------------------------------
+ * Kite Variables
+ * ---------------------------------- */
+/**
+ * `inline-block`を並べたレイアウトではwhitespaceが発生する。
+ * それを取り除くためのベターな方法の一つとして、要素間に空のコメントを挿入するなどの方法がある。
+ * それ以外にはこのシステムで利用している`letter-spacing`を利用した方法がある。
+ * 本システムではそちらを採用するが、マークアップを使った前者の方法が使えるならば、
+ * `$use-markup-fix`を`false`すること。
+ *
+ * この問題については、csswizardry-gridsとそのissueも確認してほしい。
+ * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
+ * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
+ *
+ * $use-markup-fix(bool): whitespaceをマークアップで解決するかどうか
+ */
+/**
+ * OOCSS+BEMルールで構成されたグリッドclassではなく、
+ * セマンティックなclassに対してグリッドのルールのみを適用したい場合は`true`にする。
+ * それによって`.grid__cell {}`といったclassは出力されなくなる。
+ * またセマンティックなclassにグリッドのルールを呼び出したい場合は、
+ * `@include kite-row`というようにmixinを呼び出す。詳しくは`kite-core`を参照。
+ * 
+ * なお`false`の場合でも、`@extend`を使ってセマンティックなclassにグリッドのルールを継承させることはできます。
+ *
+ * $use-semantic-classes(bool): OOCSSなclassを生成するかどうか
+ */
+/**
+ * セルに`display: inline-block`を使っているため、非対応のIE6,7では表示が崩れます。
+ * 仮にこれらのブラウザもカバーする場合には、このオプションを`true`にしてください。
+ * そうすると、`*display: inline;*zoom: 1`によって`display: inline-block`に近い振る舞いをします。
+ *
+ * $use-lagecyIE-hacks(bool): `display: inline-block`をIE6,7で再現する
+ */
+/**
+ * グリッドを構成するclass名を任意の名前にする。
+ * 
+ * ```
+ * $grid-name: 'grid';
+ * $cell-name: 'item'; // Change
+ * 
+ * .grid { ... }
+ * .grid__item { ... }
+ * ```
+ *
+ * $grid-name(str): グリッドのベースとなるクラス名
+ * $grid-cell(str): グリッドのセルのクラス名
+ * $element-delimiter: BEM Elementの区切り
+ * $modifier-delimiter: BEM Modifierの区切り
+ */
+/**
+ * カラム、ガターの幅や挙動を制御する。
+ *
+ * $unit(num): カラム数
+ * $gutter(num + unit): ガター幅（任意）
+ * $column(num + unit): カラム幅（任意）
+ * $container(num): カラム数とガター幅に応じたコンテナ幅。
+ *                  デフォルトではカラム数と幅で自動計算される。
+ *                  `.grid-container`の幅にもなる。
+ *                  また`$fluid:true`時のパーセント計算にも使われる。
+ * $fluid(bool): カラム幅をパーセント化。 
+ */
+/** ------------------------------------
+ * Kite Grid Core
+ * ---------------------------------- */
+/**
+ * Kite Grid Container
+ *
+ * 子要素にはグリッドのセルが置かれることを前提とする。
+ *
+ * 1. グリッドに影響するmargin,paddingのリセットをする。
+ * 2. グリッドにリスト要素が使われた場合のlist-styleのクリアをする。
+ * 3. 子要素のinline-blockのwhitespaceを取り除く。
+ * 4. [3]によって生じる要素の重なりを微調整する。
+ * 5. WebKitのoptimizelegibilityバグが発生した場合のために記述する。
+ * 6. Remove inter-unit whitespace that appears between `inline-block` child
+ *    elements. Work for all non-monospace font-families.  If you're using a
+ *    monospace base font, you will need to set the `grid` font-family to
+ *   `sans-serif` and then redeclare the monospace font on the `grid__cell`
+ *    objects.
+ */
+/**
+ * Kite Grid Cell
+ *
+ * 1. inline-blockによって中央寄せなど柔軟なレイアウトができる
+ * 2. カラム感の隙間を指定する。
+ * 3. paddingの値でwidthを拡張しないようにする
+ * 4. グリッドのコンテナ側で使用したwhitespaceのハックの値をデフォルトに戻す
+ */
+/**
+ * Kite Grid Row
+ */
+.grid {
+  display: table;
+  /* [4] */
+  table-layout: fixed;
+  /* [4] */
+  width: 100%;
+  list-style: none;
+  /* [2] */
+  margin: 0;
+  /* [1] */
+  padding: 0;
+  /* [1] */
+  letter-spacing: -0.30em;
+  /* [3] */
+  text-rendering: optimizespeed;
+  /* [5] */
+  /*font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;*/
+  /* [6] */
+}
+
+/**
+ * Kite Grid Cell
+ */
+.grid__cell {
+  -webkit-box-sizing: border-box;
+  /* [3] */
+  -moz-box-sizing: border-box;
+  /* [3] */
+  box-sizing: border-box;
+  /* [3] */
+  display: inline-block;
+  /* [1] */
+  padding-left: 10px;
+  /* [2] */
+  padding-right: 10px;
+  /* [2] */
+  vertical-align: top;
+  letter-spacing: normal;
+  /* [4] */
+  word-spacing: normal;
+  /* [4] */
+  text-rendering: auto;
+  /* [4] */
+  /*font-family: sans-serif;*/
+  /* [6] */
+}
+
+/**
+ * Kite Grid Row Modifier
+ */
+.grid--center {
+  text-align: center;
+}
+
+.grid--left {
+  text-align: left;
+}
+
+.grid--right {
+  text-align: right;
+}
+
+.grid--top {
+  vertical-align: top;
+}
+
+.grid--middle {
+  vertical-align: middle;
+}
+
+.grid--bottom {
+  vertical-align: bottom;
+}
+
+.grid--fill > .grid__cell {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/**
+ * Kite Grid Cell Modifier
+ */
+.grid__cell--center {
+  text-align: center;
+}
+
+.grid__cell--left {
+  text-align: left;
+}
+
+.grid__cell--left {
+  text-align: left;
+}
+
+.grid__cell--top {
+  vertical-align: top;
+}
+
+.grid__cell--middle {
+  vertical-align: middle;
+}
+
+.grid__cell--bottom {
+  vertical-align: bottom;
+}
+
+/** ------------------------------------
+ * Kite Utility
+ * ---------------------------------- */
+/**
+* Build unit width
+
+`$unit` `$gutter` `$column`の値に応じてセルの幅をつくる。
+*/
+/** ------------------------------------
+ * Kite Unit
+ * ---------------------------------- */
+/**
+ * Build class unit-width rules with OOCSS Selectors
+ *
+ * ```
+ * .grid__cell--1 {
+ *   width: 80px;
+ * }
+ * .grid__cell--12 {
+ *   width: 960px;
+ * }
+ * ```
+ */
+.grid__cell--1 {
+  width: 8.33333%;
+}
+
+.grid__cell--2 {
+  width: 16.66667%;
+}
+
+.grid__cell--3 {
+  width: 25%;
+}
+
+.grid__cell--4 {
+  width: 33.33333%;
+}
+
+.grid__cell--5 {
+  width: 41.66667%;
+}
+
+.grid__cell--6 {
+  width: 50%;
+}
+
+.grid__cell--7 {
+  width: 58.33333%;
+}
+
+.grid__cell--8 {
+  width: 66.66667%;
+}
+
+.grid__cell--9 {
+  width: 75%;
+}
+
+.grid__cell--10 {
+  width: 83.33333%;
+}
+
+.grid__cell--11 {
+  width: 91.66667%;
+}
+
+.grid__cell--12 {
+  width: 100%;
+}
