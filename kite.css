@@ -235,49 +235,49 @@
  * ```
  */
 .grid__cell--1 {
-  width: 8.33333%;
+  width: 80px;
 }
 
 .grid__cell--2 {
-  width: 16.66667%;
+  width: 160px;
 }
 
 .grid__cell--3 {
-  width: 25%;
+  width: 240px;
 }
 
 .grid__cell--4 {
-  width: 33.33333%;
+  width: 320px;
 }
 
 .grid__cell--5 {
-  width: 41.66667%;
+  width: 400px;
 }
 
 .grid__cell--6 {
-  width: 50%;
+  width: 480px;
 }
 
 .grid__cell--7 {
-  width: 58.33333%;
+  width: 560px;
 }
 
 .grid__cell--8 {
-  width: 66.66667%;
+  width: 640px;
 }
 
 .grid__cell--9 {
-  width: 75%;
+  width: 720px;
 }
 
 .grid__cell--10 {
-  width: 83.33333%;
+  width: 800px;
 }
 
 .grid__cell--11 {
-  width: 91.66667%;
+  width: 880px;
 }
 
 .grid__cell--12 {
-  width: 100%;
+  width: 960px;
 }
