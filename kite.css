@@ -137,9 +137,9 @@
   /* [3] */
   display: inline-block;
   /* [1] */
-  padding-left: 0;
+  padding-left: 10px;
   /* [2] */
-  padding-right: 0;
+  padding-right: 10px;
   /* [2] */
   vertical-align: top;
   letter-spacing: normal;
