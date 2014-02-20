@@ -26,9 +26,9 @@ $use-markup-fix: false !default;
  * 
  * なお`false`の場合でも、`@extend`を使ってセマンティックなclassにグリッドのルールを継承させることはできます。
  *
- * $semantic(bool): OOCSSなclassを生成するかどうか
+ * $use-semantic-classes(bool): OOCSSなclassを生成するかどうか
  */
-$semantic: false !default;
+$use-semantic-classes: false !default;
 
 /**
  * Gridを構成するclassセレクタをSassのplaceholderセレクタにしたい場合は`true`にする。
@@ -37,7 +37,7 @@ $use-silent-classes: false !default;
 
 $class-type: unquote(".");
 
-@if $use-silent-classes == true{
+@if $use-silent-classes == true {
     $class-type: unquote("%");
 }
 

@@ -1,11 +1,34 @@
-/** 
+/** ------------------------------------
  * Kite CSS
  * Light weight & robust Layout CSS Framework.
- * http://necolas.github.io/griddle/
- * http://csswizardry.com/csswizardry-grids/
+ * ---------------------------------- */
+
+/** 
+ * Setting
+ *
+ * Override `kite-variables'.
  */
 
-@import "kite-variables";
-@import "kite-core";
-@import "kite-utility";
-@import "kite-unit";
+$use-markup-fix: false;
+$use-semantic-classes: false;
+$use-silent-classes: false;
+$grid-name: 'grid';
+$cell-name: 'cell';
+$element-delimiter: '__';
+$modifier-delimiter: '--';
+$unit: 12;
+$gutter: 20px;
+$column: 60px;
+$container: ($column + $gutter) * $unit;
+$fluid: false;
+
+/** 
+ * Import
+ *
+ * Import kite `core'.
+ */
+ 
+@import "core/kite-variables";
+@import "core/kite-core";
+@import "core/kite-utility";
+@import "core/kite-unit";

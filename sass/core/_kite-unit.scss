@@ -2,15 +2,15 @@
  * Kite Unit
  * ---------------------------------- */
 
-@if $semantic == false {
+@if $use-semantic-classes == false {
     /**
      * Build class unit-width rules with OOCSS Selectors
      *
      * ```
-     * .grid#__cell#--1 {
+     * .grid__cell--1 {
      *   width: 80px;
      * }
-     * .grid#__cell#--12 {
+     * .grid__cell--12 {
      *   width: 960px;
      * }
      * ```
