@@ -14,10 +14,9 @@ We need more tests! ;(
 
 - Preview release
 
-# Links
+# Special thanks
 
-- [Griddle](https://github.com/necolas/griddle)
-- [csswizardry-grids](https://github.com/csswizardry/csswizardry-grids)
+It is inspired by both [Griddle](https://github.com/necolas/griddle) and [csswizardry-grids](https://github.com/csswizardry/csswizardry-grids).
 
 # License
 
