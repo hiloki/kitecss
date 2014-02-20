@@ -33,7 +33,7 @@
  * セマンティックなclassに対してグリッドのルールのみを適用したい場合は`true`にする。
  * それによって`.grid__cell {}`といったclassは出力されなくなる。
  * またセマンティックなclassにグリッドのルールを呼び出したい場合は、
- * `@include kite-grid-row`というようにmixinを呼び出す。詳しくは`kite-core`を参照。
+ * `@include kite-row`というようにmixinを呼び出す。詳しくは`kite-core`を参照。
  * 
  * なお`false`の場合でも、`@extend`を使ってセマンティックなclassにグリッドのルールを継承させることはできます。
  *
@@ -41,6 +41,13 @@
  */
 /**
  * Gridを構成するclassセレクタをSassのplaceholderセレクタにしたい場合は`true`にする。
+ */
+/**
+ * セルに`display: inline-block`を使っているため、非対応のIE6,7では表示が崩れます。
+ * 仮にこれらのブラウザもカバーする場合には、このオプションを`true`にしてください。
+ * そうすると、`*display: inline;*zoom: 1`によって`display: inline-block`に近い振る舞いをします。
+ *
+ * $use-lagecyIE-hacks(bool): `display: inline-block`をIE6,7で再現する
  */
 /**
  * グリッドを構成するclass名を任意の名前にする。
@@ -98,7 +105,7 @@
  * 4. グリッドのコンテナ側で使用したwhitespaceのハックの値をデフォルトに戻す
  */
 /**
- * Kite OOCSS Selectors
+ * Kite Grid Row
  */
 .grid {
   display: table;
@@ -120,25 +127,23 @@
   /* [6] */
 }
 
+/**
+ * Kite Grid Cell
+ */
 .grid__cell {
-  display: inline-block;
-  /* [1] */
-  *display: inline;
-  /* [1] for IE 6,7 */
-  *zoom: 1;
-  /* [1] for IE 6,7 */
-  padding-left: 0;
-  /* [2] */
-  padding-right: 0;
-  /* [2] */
-  width: 100%;
-  vertical-align: top;
   -webkit-box-sizing: border-box;
   /* [3] */
   -moz-box-sizing: border-box;
   /* [3] */
   box-sizing: border-box;
   /* [3] */
+  display: inline-block;
+  /* [1] */
+  padding-left: 0;
+  /* [2] */
+  padding-right: 0;
+  /* [2] */
+  vertical-align: top;
   letter-spacing: normal;
   /* [4] */
   word-spacing: normal;
@@ -150,7 +155,7 @@
 }
 
 /**
- * Kite Grid Container Modifier
+ * Kite Grid Row Modifier
  */
 .grid--center {
   text-align: center;

@@ -22,7 +22,7 @@ $use-markup-fix: false !default;
  * セマンティックなclassに対してグリッドのルールのみを適用したい場合は`true`にする。
  * それによって`.grid__cell {}`といったclassは出力されなくなる。
  * またセマンティックなclassにグリッドのルールを呼び出したい場合は、
- * `@include kite-grid-row`というようにmixinを呼び出す。詳しくは`kite-core`を参照。
+ * `@include kite-row`というようにmixinを呼び出す。詳しくは`kite-core`を参照。
  * 
  * なお`false`の場合でも、`@extend`を使ってセマンティックなclassにグリッドのルールを継承させることはできます。
  *
@@ -40,6 +40,16 @@ $class-type: unquote(".");
 @if $use-silent-classes == true {
     $class-type: unquote("%");
 }
+
+/**
+ * セルに`display: inline-block`を使っているため、非対応のIE6,7では表示が崩れます。
+ * 仮にこれらのブラウザもカバーする場合には、このオプションを`true`にしてください。
+ * そうすると、`*display: inline;*zoom: 1`によって`display: inline-block`に近い振る舞いをします。
+ *
+ * $use-lagecyIE-hacks(bool): `display: inline-block`をIE6,7で再現する
+ */
+ 
+$use-lagecyIE-hacks: false !default;
 
 /**
  * グリッドを構成するclass名を任意の名前にする。

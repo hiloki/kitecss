@@ -11,8 +11,8 @@
 $kite-result: null;
 $kite-results: ();
 
-// Build unit mixins
-@function kite-unit($i) {
+// Build unit function
+@function build-kite-unit($i) {
     @if $column > 0 {
         $kite-result: ($column + $gutter) * $i;
     } @else {
@@ -27,4 +27,8 @@ $kite-results: ();
         @warn "$i Over $unit count.";
     }
     @return nth($kite-results, $i);
+}
+
+@mixin kite-unit($i) {
+    width: build-kite-unit($i);
 }

@@ -12,6 +12,7 @@
 $use-markup-fix: false;
 $use-semantic-classes: false;
 $use-silent-classes: false;
+$use-lagecyIE-hacks: false;
 $grid-name: 'grid';
 $cell-name: 'cell';
 $element-delimiter: '__';
@@ -27,7 +28,7 @@ $fluid: false;
  *
  * Import kite `core'.
  */
- 
+
 @import "core/kite-variables";
 @import "core/kite-core";
 @import "core/kite-utility";
