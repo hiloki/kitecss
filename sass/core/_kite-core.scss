@@ -68,11 +68,11 @@
         *display: inline;               /* [1] for IE 6,7 */
         *zoom: 1;                       /* [1] for IE 6,7 */
     }         
-    @if $fill == true {
+    @if $fill != true {
         padding-left: ($gutter / 2);    /* [2] */
         padding-right: ($gutter / 2);   /* [2] */
     }         
-    @else  {
+    @else {
         padding-left: 0;                /* [2] */
         padding-right: 0;               /* [2] */
     }
