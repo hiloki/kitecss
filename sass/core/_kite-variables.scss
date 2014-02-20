@@ -31,17 +31,6 @@ $use-markup-fix: false !default;
 $use-semantic-classes: false !default;
 
 /**
- * Gridを構成するclassセレクタをSassのplaceholderセレクタにしたい場合は`true`にする。
- */
-$use-silent-classes: false !default;
-
-$class-type: unquote(".");
-
-@if $use-silent-classes == true {
-    $class-type: unquote("%");
-}
-
-/**
  * セルに`display: inline-block`を使っているため、非対応のIE6,7では表示が崩れます。
  * 仮にこれらのブラウザもカバーする場合には、このオプションを`true`にしてください。
  * そうすると、`*display: inline;*zoom: 1`によって`display: inline-block`に近い振る舞いをします。
@@ -80,7 +69,7 @@ $modifier-delimiter: '--' !default;
  * $column(num + unit): カラム幅（任意）
  * $container(num): カラム数とガター幅に応じたコンテナ幅。
  *                  デフォルトではカラム数と幅で自動計算される。
- *                  `#{$class-type}#{$grid-name}-container`の幅にもなる。
+ *                  `.#{$grid-name}-container`の幅にもなる。
  *                  また`$fluid:true`時のパーセント計算にも使われる。
  * $fluid(bool): カラム幅をパーセント化。 
  */

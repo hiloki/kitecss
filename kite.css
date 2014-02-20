@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /** ------------------------------------
  * Kite CSS
  * Light weight & robust Layout CSS Framework.
@@ -38,9 +39,6 @@
  * なお`false`の場合でも、`@extend`を使ってセマンティックなclassにグリッドのルールを継承させることはできます。
  *
  * $use-semantic-classes(bool): OOCSSなclassを生成するかどうか
- */
-/**
- * Gridを構成するclassセレクタをSassのplaceholderセレクタにしたい場合は`true`にする。
  */
 /**
  * セルに`display: inline-block`を使っているため、非対応のIE6,7では表示が崩れます。

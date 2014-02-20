@@ -17,7 +17,7 @@
   * この問題の対応中。
  */
 
-#{$class-type}#{$grid-name}#{$modifier-delimiter}justify { /* Expetimental */
+.#{$grid-name}#{$modifier-delimiter}justify { /* Expetimental */
     display: block;
     text-align: justify;
     text-justify: distribute-all-lines; /* for IE */
@@ -27,7 +27,7 @@
         width: 100%;
         height: 0;
     }
-    & > #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name} {
+    & > .#{$grid-name}#{$element-delimiter}#{$cell-name} {
         height: 0;
     }
 }
@@ -41,7 +41,7 @@
  * 検証中。
  */
  
-#{$class-type}#{$grid-name}#{$modifier-delimiter}full {/* Expetimental */
+.#{$grid-name}#{$modifier-delimiter}full {/* Expetimental */
     display: block;
     // width: auto;
     margin-left: -($gutter / 2);

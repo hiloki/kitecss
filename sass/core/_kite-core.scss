@@ -110,7 +110,7 @@
    * Kite Grid Row
    */
 
-  #{$class-type}#{$grid-name} {
+  .#{$grid-name} {
       @include kite-row;
   }
 
@@ -118,33 +118,33 @@
    * Kite Grid Cell
    */
 
-  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name} {
+  .#{$grid-name}#{$element-delimiter}#{$cell-name} {
       @include kite-cell();
   }
 
   /**
    * Kite Grid Row Modifier
    */
-  #{$class-type}#{$grid-name}#{$modifier-delimiter}center {
+  .#{$grid-name}#{$modifier-delimiter}center {
       text-align: center;
   }
-  #{$class-type}#{$grid-name}#{$modifier-delimiter}left {
+  .#{$grid-name}#{$modifier-delimiter}left {
       text-align: left;
   }
-  #{$class-type}#{$grid-name}#{$modifier-delimiter}right {
+  .#{$grid-name}#{$modifier-delimiter}right {
       text-align: right;
   }
-  #{$class-type}#{$grid-name}#{$modifier-delimiter}top {
+  .#{$grid-name}#{$modifier-delimiter}top {
       vertical-align: top;
   }
-  #{$class-type}#{$grid-name}#{$modifier-delimiter}middle {
+  .#{$grid-name}#{$modifier-delimiter}middle {
       vertical-align: middle;
   }
-  #{$class-type}#{$grid-name}#{$modifier-delimiter}bottom {
+  .#{$grid-name}#{$modifier-delimiter}bottom {
       vertical-align: bottom;
   }
-  #{$class-type}#{$grid-name}#{$modifier-delimiter}fill {
-      & > #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name} {
+  .#{$grid-name}#{$modifier-delimiter}fill {
+      & > .#{$grid-name}#{$element-delimiter}#{$cell-name} {
           padding-left: 0 !important;
           padding-right: 0 !important;
       }
@@ -153,22 +153,22 @@
   /**
    * Kite Grid Cell Modifier
    */
-  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}center {
+  .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}center {
       text-align: center;
   }
-  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}left {
+  .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}left {
       text-align: left;
   }
-  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}left {
+  .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}left {
       text-align: left;
   }
-  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}top {
+  .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}top {
       vertical-align: top;
   }
-  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}middle {
+  .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}middle {
       vertical-align: middle;
   }
-  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}bottom {
+  .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}bottom {
       vertical-align: bottom;
   }
 }

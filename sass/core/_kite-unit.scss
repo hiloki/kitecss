@@ -16,7 +16,7 @@
      * ```
      */
     @for $i from 1 through $unit {
-        #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}#{$i} {
+        .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}#{$i} {
             @include kite-unit($i);
         }
     }
