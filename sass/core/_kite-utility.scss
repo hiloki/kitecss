@@ -14,8 +14,14 @@ $kite-results: ();
 // Build unit function
 @function build-kite-unit($i) {
     @if $column > 0 {
-        $kite-result: ($column + $gutter) * $i;
-    } @else {
+        @if $fluid == true {
+            $kite-result: (($column + $gutter) * $i) / $container * 100%;
+        }
+        @else {
+            $kite-result: ($column + $gutter) * $i;
+        }
+    }
+    @else {
         $kite-result: (100% / $unit) * $i;
         $container: auto;
     }

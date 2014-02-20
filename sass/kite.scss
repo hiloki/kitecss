@@ -20,7 +20,7 @@ $unit: 12;
 $gutter: 20px;
 $column: 60px;
 $container: ($column + $gutter) * $unit;
-$fluid: false;
+$fluid: true;
 
 /** 
  * Import
