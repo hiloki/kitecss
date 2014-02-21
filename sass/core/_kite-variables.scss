@@ -17,6 +17,12 @@
 // */
 $use-markup-fix: false !default;
 
+// /**
+// * `inline-block`によるwhitespaceの回避のために使われる`letter-spacing`ハックにより、Firefoxなどで問題が生じる。
+// * その対応のため、一度`.grid`でnon-monospaceなfont-familyを指定しているが、
+// * それを再びデフォルトのfamilyに戻すためにその記述がここに必要となる。
+$set-default-family: Helvetica, sans-serif !default;
+
 ///**
 // * OOCSS+BEMルールで構成されたグリッドclassではなく、
 // * セマンティックなclassに対してグリッドのルールのみを適用したい場合は`true`にする。

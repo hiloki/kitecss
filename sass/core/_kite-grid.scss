@@ -29,7 +29,7 @@
     @if $use-markup-fix == false {
         letter-spacing: -0.30em;        /* [3] */
         text-rendering: optimizespeed;  /* [5] */
-        /*font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;*/ /* [6] */
+        font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; /* [6] */
     }
     @if $align == 'center' {
         text-align: center;
@@ -81,7 +81,7 @@
         letter-spacing:normal;          /* [4] */
         word-spacing:normal;            /* [4] */
         text-rendering: auto;           /* [4] */
-        /*font-family: sans-serif;*/        /* [6] */
+        font-family: #{$set-default-family};        /* [6] */
     }
     @if $align == 'center' {
         text-align: center;

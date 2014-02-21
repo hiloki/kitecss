@@ -9,6 +9,7 @@
  * Override `kite-variables'.
  */
 
+$set-default-family: 'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;
 $use-markup-fix: false;
 $use-semantic-classes: false;
 $use-lagecyIE-hacks: false;
@@ -17,8 +18,8 @@ $cell-name: 'cell';
 $element-delimiter: '__';
 $modifier-delimiter: '--';
 $unit: 12;
-$gutter: 20px;
-$column: 60px;
+$gutter: 0;
+$column: 80px;
 $container: ($column + $gutter) * $unit;
 $fluid: false;
 
