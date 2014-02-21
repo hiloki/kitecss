@@ -1,0 +1,34 @@
+/** ------------------------------------
+ * Kite CSS
+ * Light weight & robust Layout CSS Framework.
+ * ---------------------------------- */
+
+/** 
+ * Setting
+ *
+ * Override `kite-variables'.
+ */
+
+$use-markup-fix: false;
+$use-semantic-classes: false;
+$use-lagecyIE-hacks: false;
+$grid-name: 'grid';
+$cell-name: 'cell';
+$element-delimiter: '__';
+$modifier-delimiter: '--';
+$unit: 12;
+$gutter: 20px;
+$column: 60px;
+$container: ($column + $gutter) * $unit;
+$fluid: true;
+
+/** 
+ * Import
+ *
+ * Import kite `core'.
+ */
+
+@import "../../sass/core/kite-variables";
+@import "../../sass/core/kite-core";
+@import "../../sass/core/kite-utility";
+@import "../../sass/core/kite-unit";

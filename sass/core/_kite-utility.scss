@@ -35,6 +35,19 @@ $kite-results: ();
     @return nth($kite-results, $i);
 }
 
+// Set unit width
 @mixin kite-unit($i) {
     width: build-kite-unit($i);
+}
+
+// Shift to the right
+@mixin kite-push($i) {
+    position: relative;
+    right: build-kite-unit($i) * -1;
+}
+
+// Shift to the left
+@mixin kite-pull($i) {
+    position: relative;
+    left: build-kite-unit($i) * -1;
 }

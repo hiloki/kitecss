@@ -281,3 +281,123 @@
 .grid__cell--12 {
   width: 100%;
 }
+
+.grid__cell--push-1 {
+  position: relative;
+  right: -8.33333%;
+}
+
+.grid__cell--push-2 {
+  position: relative;
+  right: -16.66667%;
+}
+
+.grid__cell--push-3 {
+  position: relative;
+  right: -25%;
+}
+
+.grid__cell--push-4 {
+  position: relative;
+  right: -33.33333%;
+}
+
+.grid__cell--push-5 {
+  position: relative;
+  right: -41.66667%;
+}
+
+.grid__cell--push-6 {
+  position: relative;
+  right: -50%;
+}
+
+.grid__cell--push-7 {
+  position: relative;
+  right: -58.33333%;
+}
+
+.grid__cell--push-8 {
+  position: relative;
+  right: -66.66667%;
+}
+
+.grid__cell--push-9 {
+  position: relative;
+  right: -75%;
+}
+
+.grid__cell--push-10 {
+  position: relative;
+  right: -83.33333%;
+}
+
+.grid__cell--push-11 {
+  position: relative;
+  right: -91.66667%;
+}
+
+.grid__cell--push-12 {
+  position: relative;
+  right: -100%;
+}
+
+.grid__cell--pull-1 {
+  position: relative;
+  left: -8.33333%;
+}
+
+.grid__cell--pull-2 {
+  position: relative;
+  left: -16.66667%;
+}
+
+.grid__cell--pull-3 {
+  position: relative;
+  left: -25%;
+}
+
+.grid__cell--pull-4 {
+  position: relative;
+  left: -33.33333%;
+}
+
+.grid__cell--pull-5 {
+  position: relative;
+  left: -41.66667%;
+}
+
+.grid__cell--pull-6 {
+  position: relative;
+  left: -50%;
+}
+
+.grid__cell--pull-7 {
+  position: relative;
+  left: -58.33333%;
+}
+
+.grid__cell--pull-8 {
+  position: relative;
+  left: -66.66667%;
+}
+
+.grid__cell--pull-9 {
+  position: relative;
+  left: -75%;
+}
+
+.grid__cell--pull-10 {
+  position: relative;
+  left: -83.33333%;
+}
+
+.grid__cell--pull-11 {
+  position: relative;
+  left: -91.66667%;
+}
+
+.grid__cell--pull-12 {
+  position: relative;
+  left: -100%;
+}

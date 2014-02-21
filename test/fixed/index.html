@@ -115,6 +115,63 @@ color: #FFF;
 	</div>
 </div>
 
+<h1 class="demo-title">960px fixed alignment</h1>
+<div class="demo-container">
+	<div class="grid grid--left">
+		<div class="grid__cell grid__cell--2">
+			<div>2</div>
+		</div>
+	</div>
+	<div class="grid grid--center">
+		<div class="grid__cell grid__cell--7">
+			<div>7</div>
+		</div>
+	</div>
+	<div class="grid grid--right">
+		<div class="grid__cell grid__cell--4">
+			<div>4</div>
+		</div>
+	</div>
+</div>
+
+<h1 class="demo-title">960px fixed push & pull</h1>
+<div class="demo-container">
+	<div class="grid">
+		<div class="grid__cell grid__cell--5">
+			<div>A</div>
+		</div>
+		<div class="grid__cell grid__cell--7">
+			<div>B</div>
+		</div>
+		<div class="grid__cell grid__cell--5 grid__cell--push-7">
+			<div>A</div>
+		</div>
+		<div class="grid__cell grid__cell--7 grid__cell--pull-5">
+			<div>B</div>
+		</div>
+	</div>
+	<div class="grid">
+		<div class="grid__cell grid__cell--6">
+			<div>A</div>
+		</div>
+		<div class="grid__cell grid__cell--2">
+			<div>B</div>
+		</div>
+		<div class="grid__cell grid__cell--4">
+			<div>C</div>
+		</div>
+		<div class="grid__cell grid__cell--6 grid__cell--push-4">
+			<div>A</div>
+		</div>
+		<div class="grid__cell grid__cell--2 grid__cell--push-4">
+			<div>B</div>
+		</div>
+		<div class="grid__cell grid__cell--4 grid__cell--pull-8">
+			<div>C</div>
+		</div>
+	</div>
+</div>
+
 <pre class="demo-spec"><code>$use-markup-fix: false;
 $use-semantic-classes: false;
 $use-lagecyIE-hacks: false;

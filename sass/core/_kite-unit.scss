@@ -20,4 +20,14 @@
             @include kite-unit($i);
         }
     }
+    @for $i from 1 through $unit {
+        .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}push-#{$i} {
+            @include kite-push($i);
+        }
+    }
+    @for $i from 1 through $unit {
+        .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}pull-#{$i} {
+            @include kite-pull($i);
+        }
+    }
 }
