@@ -22,7 +22,7 @@ $use-markup-fix: false !default;
  * セマンティックなclassに対してグリッドのルールのみを適用したい場合は`true`にする。
  * それによって`.grid__cell {}`といったclassは出力されなくなる。
  * またセマンティックなclassにグリッドのルールを呼び出したい場合は、
- * `@include kite-row`というようにmixinを呼び出す。詳しくは`kite-core`を参照。
+ * `@include kite-row`というようにmixinを呼び出す。詳しくは`kite-grid`を参照。
  * 
  * なお`false`の場合でも、`@extend`を使ってセマンティックなclassにグリッドのルールを継承させることはできます。
  *
