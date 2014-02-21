@@ -3,78 +3,6 @@
  * Kite CSS
  * Light weight & robust Layout CSS Framework.
  * ---------------------------------- */
-/** 
- * Setting
- *
- * Override `kite-variables'.
- */
-/** 
- * Import
- *
- * Import kite `core'.
- */
-/** ------------------------------------
- * Kite Variables
- * ---------------------------------- */
-/**
- * `inline-block`を並べたレイアウトではwhitespaceが発生する。
- * それを取り除くためのベターな方法の一つとして、要素間に空のコメントを挿入するなどの方法がある。
- * それ以外にはこのシステムで利用している`letter-spacing`を利用した方法がある。
- * 本システムではそちらを採用するが、マークアップを使った前者の方法が使えるならば、
- * `$use-markup-fix`を`false`すること。
- *
- * この問題については、csswizardry-gridsとそのissueも確認してほしい。
- * github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
- * github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
- *
- * $use-markup-fix(bool): whitespaceをマークアップで解決するかどうか
- */
-/**
- * OOCSS+BEMルールで構成されたグリッドclassではなく、
- * セマンティックなclassに対してグリッドのルールのみを適用したい場合は`true`にする。
- * それによって`.grid__cell {}`といったclassは出力されなくなる。
- * またセマンティックなclassにグリッドのルールを呼び出したい場合は、
- * `@include kite-row`というようにmixinを呼び出す。詳しくは`kite-grid`を参照。
- * 
- * なお`false`の場合でも、`@extend`を使ってセマンティックなclassにグリッドのルールを継承させることはできます。
- *
- * $use-semantic-classes(bool): OOCSSなclassを生成するかどうか
- */
-/**
- * セルに`display: inline-block`を使っているため、非対応のIE6,7では表示が崩れます。
- * 仮にこれらのブラウザもカバーする場合には、このオプションを`true`にしてください。
- * そうすると、`*display: inline;*zoom: 1`によって`display: inline-block`に近い振る舞いをします。
- *
- * $use-lagecyIE-hacks(bool): `display: inline-block`をIE6,7で再現する
- */
-/**
- * グリッドを構成するclass名を任意の名前にする。
- * 
- * ```
- * $grid-name: 'grid';
- * $cell-name: 'item'; // Change
- * 
- * .grid { ... }
- * .grid__item { ... }
- * ```
- *
- * $grid-name(str): グリッドのベースとなるクラス名
- * $grid-cell(str): グリッドのセルのクラス名
- * $element-delimiter: BEM Elementの区切り
- * $modifier-delimiter: BEM Modifierの区切り
- */
-/**
- * カラム、ガターの幅や挙動を制御する。
- *
- * $unit(num): カラム数
- * $gutter(num + unit): ガター幅（任意）
- * $column(num + unit): カラム幅（任意）
- * $container(num): カラム数とガター幅に応じたコンテナ幅。
- *                  デフォルトではカラム数と幅で自動計算される。
- *                  `.grid-container`の幅にもなる。
- *                  また`$fluid:true`時のパーセント計算にも使われる。
- * $fluid(bool): カラム幅をパーセント化。 
- */
 /** ------------------------------------
  * Kite Grid Core
  * ---------------------------------- */
@@ -212,28 +140,8 @@
 }
 
 /** ------------------------------------
- * Kite Utility
- * ---------------------------------- */
-/**
-* Build unit width
-
-`$unit` `$gutter` `$column`の値に応じてセルの幅をつくる。
-*/
-/** ------------------------------------
  * Kite Unit
  * ---------------------------------- */
-/**
- * Build class unit-width rules with OOCSS Selectors
- *
- * ```
- * .grid__cell--1 {
- *   width: 80px;
- * }
- * .grid__cell--12 {
- *   width: 960px;
- * }
- * ```
- */
 .grid__cell--1 {
   width: 80px;
 }

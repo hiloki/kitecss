@@ -3,18 +3,18 @@
  * ---------------------------------- */
 
 @if $use-semantic-classes == false {
-    /**
-     * Build class unit-width rules with OOCSS Selectors
-     *
-     * ```
-     * .grid__cell--1 {
-     *   width: 80px;
-     * }
-     * .grid__cell--12 {
-     *   width: 960px;
-     * }
-     * ```
-     */
+    ///**
+    // * Build class unit-width rules with OOCSS Selectors
+    // *
+    // * ```
+    // * .grid__cell--1 {
+    // *   width: 80px;
+    // * }
+    // * .grid__cell--12 {
+    // *   width: 960px;
+    // * }
+    // * ```
+    // */
     @for $i from 1 through $unit {
         .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}#{$i} {
             @include kite-unit($i);
