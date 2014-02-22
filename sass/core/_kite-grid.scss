@@ -1,6 +1,6 @@
-/** ------------------------------------
- * Kite Grid
- * ---------------------------------- */
+///** ------------------------------------
+// * Kite Grid
+// * ---------------------------------- */
 
 ///**
 // * Kite Grid Container
@@ -20,16 +20,16 @@
 // */
 
 @mixin kite-row($align: null, $valign:null) {
-    display: table;                     /* [4] */
-    table-layout: fixed;                /* [4] */
+    display: table;                     ///* [4] */
+    table-layout: fixed;                ///* [4] */
     width: 100%;
-    list-style:none;                    /* [2] */
-    margin:0;                           /* [1] */
-    padding:0;                          /* [1] */
+    list-style:none;                    ///* [2] */
+    margin:0;                           ///* [1] */
+    padding:0;                          ///* [1] */
     @if $use-markup-fix == false {
-        letter-spacing: -0.30em;        /* [3] */
-        text-rendering: optimizespeed;  /* [5] */
-        font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; /* [6] */
+        letter-spacing: -0.30em;        ///* [3] */
+        text-rendering: optimizespeed;  ///* [5] */
+        font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif; ///* [6] */
     }
     @if $align == 'center' {
         text-align: center;
@@ -51,37 +51,37 @@
     }
 }
 
-/**
- * Kite Grid Cell
- *
- * 1. inline-blockによって中央寄せなど柔軟なレイアウトができる
- * 2. カラム感の隙間を指定する。
- * 3. paddingの値でwidthを拡張しないようにする
- * 4. グリッドのコンテナ側で使用したwhitespaceのハックの値をデフォルトに戻す
- */
+///**
+// * Kite Grid Cell
+// *
+// * 1. inline-blockによって中央寄せなど柔軟なレイアウトができる
+// * 2. カラム感の隙間を指定する。
+// * 3. paddingの値でwidthを拡張しないようにする
+// * 4. グリッドのコンテナ側で使用したwhitespaceのハックの値をデフォルトに戻す
+// */
 @mixin kite-cell($align: null,$valign: null, $fill: false) {
-    -webkit-box-sizing:border-box;      /* [3] */
-       -moz-box-sizing:border-box;      /* [3] */
-            box-sizing:border-box;      /* [3] */
-    display:inline-block;               /* [1] */
+    -webkit-box-sizing:border-box;      ///* [3] */
+       -moz-box-sizing:border-box;      ///* [3] */
+            box-sizing:border-box;      ///* [3] */
+    display:inline-block;               ///* [1] */
     @if $use-lagecyIE-hacks == true {
-        *display: inline;               /* [1] for IE 6,7 */
-        *zoom: 1;                       /* [1] for IE 6,7 */
+        *display: inline;               ///* [1] for IE 6,7 */
+        *zoom: 1;                       ///* [1] for IE 6,7 */
     }         
     @if $fill != true {
-        padding-left: ($gutter / 2);    /* [2] */
-        padding-right: ($gutter / 2);   /* [2] */
+        padding-left: ($gutter / 2);    ///* [2] */
+        padding-right: ($gutter / 2);   ///* [2] */
     }         
     @else {
-        padding-left: 0;                /* [2] */
-        padding-right: 0;               /* [2] */
+        padding-left: 0;                ///* [2] */
+        padding-right: 0;               ///* [2] */
     }
     vertical-align:top;             
     @if $use-markup-fix == false {
-        letter-spacing:normal;          /* [4] */
-        word-spacing:normal;            /* [4] */
-        text-rendering: auto;           /* [4] */
-        font-family: #{$set-default-family};        /* [6] */
+        letter-spacing:normal;          ///* [4] */
+        word-spacing:normal;            ///* [4] */
+        text-rendering: auto;           ///* [4] */
+        font-family: #{$set-default-family};        ///* [6] */
     }
     @if $align == 'center' {
         text-align: center;
@@ -106,25 +106,25 @@
 
 @if $use-semantic-classes == false {
 
-  /**
-   * Kite Grid Row
-   */
+  ///**
+  // * Kite Grid Row
+  // */
 
   #{$class-type}#{$grid-name} {
       @include kite-row;
   }
 
-  /**
-   * Kite Grid Cell
-   */
+  ///**
+  // * Kite Grid Cell
+  // */
 
   #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name} {
       @include kite-cell();
   }
 
-  /**
-   * Kite Grid Row Modifier
-   */
+  ///**
+  // * Kite Grid Row Modifier
+  // */
   #{$class-type}#{$grid-name}#{$modifier-delimiter}center {
       text-align: center;
   }
@@ -150,9 +150,9 @@
       }
   }
 
-  /**
-   * Kite Grid Cell Modifier
-   */
+  ///**
+  // * Kite Grid Cell Modifier
+  // */
   #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}center {
       text-align: center;
   }

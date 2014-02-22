@@ -53,7 +53,7 @@ $use-lagecyIE-hacks: false !default;
 // * $use-silent-classes(bool): `.`ではなく`%`からはじまるセレクタになる
 // */
 
-$use-silent-classes: true !default;
+$use-silent-classes: false !default;
 
 $class-type: unquote(".");
 

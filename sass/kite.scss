@@ -1,13 +1,13 @@
-/** ------------------------------------
- * Kite CSS
- * Light weight & robust Layout CSS Framework.
- * ---------------------------------- */
+///** ------------------------------------
+// * Kite CSS
+// * Light weight & robust Layout CSS Framework.
+// * ---------------------------------- */
 
-// /** 
-//  * Setting
-//  *
-//  * Override `kite-variables'.
-//  */
+///** 
+// * Setting
+// *
+// * Override `kite-variables'.
+// */
 
 $set-default-family: 'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;
 $use-markup-fix: false;
@@ -23,11 +23,11 @@ $column: 60px;
 $container: ($column + $gutter) * $unit;
 $fluid: false;
 
-// /** 
-//  * Import
-//  *
-//  * Import kite `core'.
-//  */
+///** 
+// * Import
+// *
+// * Import kite `core'.
+// */
 
 @import "core/kite-variables";
 @import "core/kite-grid";
