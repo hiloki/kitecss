@@ -1,23 +1,23 @@
 /** ------------------------------------
- * Kite Grid Core
+ * Kite Grid
  * ---------------------------------- */
 
-/**
- * Kite Grid Container
- *
- * 子要素にはグリッドのセルが置かれることを前提とする。
- *
- * 1. グリッドに影響するmargin,paddingのリセットをする。
- * 2. グリッドにリスト要素が使われた場合のlist-styleのクリアをする。
- * 3. 子要素のinline-blockのwhitespaceを取り除く。
- * 4. [3]によって生じる要素の重なりを微調整する。
- * 5. WebKitのoptimizelegibilityバグが発生した場合のために記述する。
- * 6. Remove inter-unit whitespace that appears between `inline-block` child
- *    elements. Work for all non-monospace font-families.  If you're using a
- *    monospace base font, you will need to set the `grid` font-family to
- *   `sans-serif` and then redeclare the monospace font on the `grid#{$element-delimiter}#{$cell-name}`
- *    objects.
- */
+///**
+// * Kite Grid Container
+// *
+// * 子要素にはグリッドのセルが置かれることを前提とする。
+// *
+// * 1. グリッドに影響するmargin,paddingのリセットをする。
+// * 2. グリッドにリスト要素が使われた場合のlist-styleのクリアをする。
+// * 3. 子要素のinline-blockのwhitespaceを取り除く。
+// * 4. [3]によって生じる要素の重なりを微調整する。
+// * 5. WebKitのoptimizelegibilityバグが発生した場合のために記述する。
+// * 6. Remove inter-unit whitespace that appears between `inline-block` child
+// *    elements. Work for all non-monospace font-families.  If you're using a
+// *    monospace base font, you will need to set the `grid` font-family to
+// *   `sans-serif` and then redeclare the monospace font on the `grid#{$element-delimiter}#{$cell-name}`
+// *    objects.
+// */
 
 @mixin kite-row($align: null, $valign:null) {
     display: table;                     /* [4] */
@@ -110,7 +110,7 @@
    * Kite Grid Row
    */
 
-  .#{$grid-name} {
+  #{$class-type}#{$grid-name} {
       @include kite-row;
   }
 
@@ -118,33 +118,33 @@
    * Kite Grid Cell
    */
 
-  .#{$grid-name}#{$element-delimiter}#{$cell-name} {
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name} {
       @include kite-cell();
   }
 
   /**
    * Kite Grid Row Modifier
    */
-  .#{$grid-name}#{$modifier-delimiter}center {
+  #{$class-type}#{$grid-name}#{$modifier-delimiter}center {
       text-align: center;
   }
-  .#{$grid-name}#{$modifier-delimiter}left {
+  #{$class-type}#{$grid-name}#{$modifier-delimiter}left {
       text-align: left;
   }
-  .#{$grid-name}#{$modifier-delimiter}right {
+  #{$class-type}#{$grid-name}#{$modifier-delimiter}right {
       text-align: right;
   }
-  .#{$grid-name}#{$modifier-delimiter}top {
+  #{$class-type}#{$grid-name}#{$modifier-delimiter}top {
       vertical-align: top;
   }
-  .#{$grid-name}#{$modifier-delimiter}middle {
+  #{$class-type}#{$grid-name}#{$modifier-delimiter}middle {
       vertical-align: middle;
   }
-  .#{$grid-name}#{$modifier-delimiter}bottom {
+  #{$class-type}#{$grid-name}#{$modifier-delimiter}bottom {
       vertical-align: bottom;
   }
-  .#{$grid-name}#{$modifier-delimiter}fill {
-      & > .#{$grid-name}#{$element-delimiter}#{$cell-name} {
+  #{$class-type}#{$grid-name}#{$modifier-delimiter}fill {
+      & > #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name} {
           padding-left: 0 !important;
           padding-right: 0 !important;
       }
@@ -153,22 +153,22 @@
   /**
    * Kite Grid Cell Modifier
    */
-  .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}center {
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}center {
       text-align: center;
   }
-  .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}left {
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}left {
       text-align: left;
   }
-  .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}left {
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}left {
       text-align: left;
   }
-  .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}top {
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}top {
       vertical-align: top;
   }
-  .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}middle {
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}middle {
       vertical-align: middle;
   }
-  .#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}bottom {
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}bottom {
       vertical-align: bottom;
   }
 }

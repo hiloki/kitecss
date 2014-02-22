@@ -46,6 +46,21 @@ $use-semantic-classes: false !default;
  
 $use-lagecyIE-hacks: false !default;
 
+
+///**
+// * Gridを構成するclassセレクタをSassのPlaceholderセレクタにしたい場合は`true`にする。
+// *
+// * $use-silent-classes(bool): `.`ではなく`%`からはじまるセレクタになる
+// */
+
+$use-silent-classes: true !default;
+
+$class-type: unquote(".");
+
+@if $use-silent-classes == true{
+    $class-type: unquote("%");
+}
+
 ///**
 // * グリッドを構成するclass名を任意の名前にする。
 // * 
