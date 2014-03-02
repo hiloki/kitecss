@@ -1,0 +1,5 @@
+[fixed]
+url=http://localhost:8000/test/fixed/index.html
+
+[fluid]
+url=http://localhost:8000/test/fluid/index.html
