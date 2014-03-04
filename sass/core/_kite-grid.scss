@@ -21,7 +21,6 @@
 
 @mixin kite-row($align: null, $valign:null) {
     display: table;                     ///* [4] */
-    table-layout: fixed;                ///* [4] */
     width: 100%;
     list-style:none;                    ///* [2] */
     margin:0;                           ///* [1] */
