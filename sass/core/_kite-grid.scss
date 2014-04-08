@@ -67,16 +67,16 @@
     @if $use-lagecyIE-hacks == true {
         *display: inline;               ///* [1] for IE 6,7 */
         *zoom: 1;                       ///* [1] for IE 6,7 */
-    }         
+    }
     @if $fill != true {
         padding-left: ($gutter / 2);    ///* [2] */
         padding-right: ($gutter / 2);   ///* [2] */
-    }         
+    }
     @else {
         padding-left: 0;                ///* [2] */
         padding-right: 0;               ///* [2] */
     }
-    vertical-align:top;             
+    vertical-align:top;
     @if $use-markup-fix == false {
         letter-spacing:normal;          ///* [4] */
         word-spacing:normal;            ///* [4] */
@@ -159,8 +159,8 @@
   #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}left {
       text-align: left;
   }
-  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}left {
-      text-align: left;
+  #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}right {
+      text-align: right;
   }
   #{$class-type}#{$grid-name}#{$element-delimiter}#{$cell-name}#{$modifier-delimiter}top {
       vertical-align: top;
