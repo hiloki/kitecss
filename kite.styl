@@ -224,7 +224,7 @@ If you need to fix this bug, use the following code.
 
 .kite--grid {
   unit = 6;
-  gutter = 1rem;
+  gutter = 10px;
   > .kite__item {
     for i in (1..unit) { 
       &.is-{i}of{unit} {
@@ -233,6 +233,10 @@ If you need to fix this bug, use the following code.
     }
   }
   &.has-gutter {
+    display: block;
+    width: auto;
+    margin-left: - gutter;
+    margin-right: - gutter;
     > .kite__item {
       padding-left: gutter;
       padding-right: gutter;

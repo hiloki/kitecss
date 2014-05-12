@@ -204,9 +204,14 @@ If you need to fix this bug, use the following code.
   width: 91.66667%; }
 .kite--grid > .kite__item.is-12of12 {
   width: 100%; }
-.kite--grid.has-gutter > .kite__item {
-  padding-left: 1rem;
-  padding-right: 1rem; }
+.kite--grid.has-gutter {
+  display: block;
+  width: auto;
+  margin-left: -10px;
+  margin-right: -10px; }
+  .kite--grid.has-gutter > .kite__item {
+    padding-left: 10px;
+    padding-right: 10px; }
 
 /*
 ## Sizing items
