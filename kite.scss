@@ -1,0 +1,274 @@
+/*! Kite v0.1.0 | MIT License | github.com/kitecss */
+
+/*
+# kite core
+
+1. Fill in `inline-block` gaps and then reset to `font-size` root font-size `rem`
+2. For Android: Android don't fill in `inline-block` gaps. `display: table;` magic fills in them.  
+3. For lte IE 8: IE 8 can't use `rem`. Use `medium` keyword for the purpose of reset `font-size`.
+
+```html
+<div class="kite">
+  <div class="kite__item">A</div>
+  <div class="kite__item">B</div>
+  <div class="kite__item">C</div>
+</div>
+```
+*/
+
+.kite {
+  display: table; // 2
+  width: 100%;
+  font-size: 0 !important; // 1
+}
+
+/*
+Opera 12 has causing too wide gaps bug by setting `font-size: 0'.
+If you need to fix this bug, use the following code.
+
+```
+.opera:-o-prefocus,
+.kite {
+  font-size: 0.5px !important;
+}
+```
+*/
+
+.kite__item {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: medium; // 3
+  font-size: 1rem; // 1
+  vertical-align: top;
+}
+
+
+/*
+# kite functions
+*/
+
+/*
+## Horizontal align items
+
+```html
+<div class="kite kite--center">
+  <div class="kite__item">A</div>
+  <div class="kite__item">B</div>
+  <div class="kite__item">C</div>
+</div>
+```
+*/
+
+.kite--left {
+  text-align: left !important;
+}
+
+.kite--center {
+  text-align: center !important;
+}
+
+.kite--right {
+  text-align: right !important;
+}
+
+/*
+## Vertical align items
+
+```html
+<div class="kite">
+  <div class="kite__item">A</div>
+  <div class="kite__item kite__item--middle">B</div>
+  <div class="kite__item kite__item--middle">C</div>
+</div>
+```
+*/
+
+.kite--top {
+  > .kite__item {
+    vertical-align: top !important;
+  }
+}
+
+.kite--middle {
+  > .kite__item {
+    vertical-align: middle !important;
+  }
+}
+
+.kite--bottom {
+  > .kite__item {
+    vertical-align: bottom !important;
+  }
+}
+
+/*
+## Horizontal align element in items
+
+```html
+<div class="kite">
+  <div class="kite__item kite__item--center">A</div>
+  <div class="kite__item kite__item--center">B</div>
+  <div class="kite__item kite__item--center">C</div>
+</div>
+```
+*/
+
+.kite__item--left {
+  text-align: left !important;
+}
+
+.kite__item--center {
+  text-align: center !important;
+}
+
+.kite__item--right {
+  text-align: right !important;
+}
+
+/*
+## Justify align items
+
+```html
+<div class="kite kite--justify">
+  <div class="kite__item">A</div>
+  <div class="kite__item">B</div>
+  <div class="kite__item">C</div>
+</div>
+```
+*/
+
+.kite--justify {
+  display: block;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+/*
+## Fill items
+
+```html
+<div class="kite kite--justify">
+  <div class="kite__item">A</div>
+  <div class="kite__item">B</div>
+  <div class="kite__item">C</div>
+</div>
+```
+*/
+
+.kite--fill {
+  &.is-equalize {
+    table-layout: fixed;
+  }
+  > .kite__item {
+    display: table-cell;
+  }
+}
+
+/*
+## Absolute position items
+
+```html
+<div style="position:relative">
+  <div class="kite kite--position">
+    <div class="kite__item">A</div>
+  </div>
+</div>
+```
+*/
+
+.kite--position {
+  display: block !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  // z-index: 10000;
+  text-align: center;
+  &.is-fixed {
+    position: fixed;
+  }
+  &.is-hidden {
+    display: none !important;
+  }
+  &:after {
+    display: inline-block;
+    content: "";
+    height: 100%;
+    vertical-align: middle;
+  }
+  > .kite__item {
+    vertical-align: middle;
+    text-align: left;
+  }
+}
+
+/*
+## Grid layout items
+
+```html
+<div class="kite kite--grid has-gutter">
+  <div class="kite__item is-4of12">A</div>
+  <div class="kite__item is-4of12">B</div>
+  <div class="kite__item is-4of12">C</div>
+</div>
+```
+*/
+
+.kite--grid {
+  $unit: 12;
+  $gutter: 1rem;
+  > .kite__item {
+    @for $i from 1 through $unit { 
+      &.is-#{$i}of#{$unit} {
+        width: percentage($i / $unit);
+      }
+    }
+  }
+  &.has-gutter {
+    > .kite__item {
+      padding-left: $gutter;
+      padding-right: $gutter;
+    }
+  }
+}
+
+
+/*
+## Sizing items
+
+```html
+<div class="kite">
+  <div class="kite__item">A</div>
+  <div class="kite__item kite__item--left">B</div>
+  <div class="kite__item kite__item--right">C</div>
+</div>
+```
+*/
+
+.kite__item--fifth {
+  width: 20%;
+}
+
+.kite__item--fourth {
+  width: 25%;
+}
+
+.kite__item--third {
+  width: 33.333%;
+}
+
+.kite__item--half {
+  width: 50%;
+}
+
+.kite__item--full {
+  width: 100%;
+}
