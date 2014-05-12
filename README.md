@@ -1,29 +1,26 @@
-# Kite CSS
+# Kite
 
 Kite is flexible layout helper CSS library.
 
 # Demo
 
-Coming soon.
+See [GitHub Pages](http://hiloki.github.io/kitecss/).
 
-# Browser Support and Testing
+# Browser Support
 
-- Latest Stable: Chrome, Safari
-
-We need more tests! ;(
-
-# History
-
-## 0.0.1 (2014-02-21)
-
-- Preview release
+- Google Chrome (latest)
+- Opera (latest)
+- Firefox (latest)
+- Safari 5+
+- Internet Explorer 8+
+- Android 2.3+
+- Mobile Safari 5+
 
 # Special thanks
 
-It is inspired by both [Griddle](https://github.com/necolas/griddle) and [csswizardry-grids](https://github.com/csswizardry/csswizardry-grids).
+It is inspired by [components-grid](https://github.com/suitcss/components-grid) and more [@necolas](https://github.com/necolas)'s works.
 
 # License
 
 The MIT License.
 
-Copyright (c) 2014 Hiroki Tani <contact@inkdesign.jp>
