@@ -226,23 +226,23 @@ Use padding on a container(.kite), or `overflow-x:hidden` to protect against it.
 */
 
 .kite--grid {
-  $unit: 12;
-  $gutter: 10px;
+  unit = 6;
+  gutter = 10px;
   > .kite__item {
-    @for $i from 1 through $unit { 
-      &.is-#{$i}of#{$unit} {
-        width: percentage($i / $unit);
+    for i in (1..unit) { 
+      &.is-{i}of{unit} {
+        width: round((i / unit) * 100%, 3);
       }
     }
   }
   &.has-gutter {
     display: block;
     width: auto;
-    margin-left: -$gutter;
-    margin-right: -$gutter;
+    margin-left: - gutter;
+    margin-right: - gutter;
     > .kite__item {
-      padding-left: $gutter;
-      padding-right: $gutter;
+      padding-left: gutter;
+      padding-right: gutter;
     }
   }
 }

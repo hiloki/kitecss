@@ -169,6 +169,8 @@ code {
   .p-note__title > .c-ico {
     vertical-align: -2px; }
 
+.p-note__points {
+  margin: auto 16px; }
 
 .p-note__title--advantages {
   color: #1E824C; }
@@ -180,6 +182,7 @@ code {
   padding: 0 1em; }
 
 .p-note__code {
+  margin: auto 16px;
   font-size: 24px; }
   .p-note__code .c-ico {
     position: relative;
