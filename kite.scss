@@ -213,6 +213,9 @@ If you need to fix this bug, use the following code.
 /*
 ## Grid layout items
 
+NOTE: this can trigger a horizontal scrollbar if the component is as wide as the viewport.
+Use padding on a container(.kite), or `overflow-x:hidden` to protect against it.
+
 ```html
 <div class="kite kite--grid has-gutter">
   <div class="kite__item is-4of12">A</div>
