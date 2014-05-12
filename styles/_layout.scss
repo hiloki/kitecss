@@ -1,0 +1,27 @@
+/* ==============================
+ Layout
+================================= */
+
+#hero {
+  position: relative;
+  // border-top: 1px solid rgba($keyColor,0.75);
+  height: 420px;
+  background-image:
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAHlBMVEUAAABVVVWqqqrU1NSUlJR/f38qKio/Pz/p6en////esGNyAAAACnRSTlMMDAwMDAwMDAwMS1ocSAAABENJREFUOMsFwUlDqlAYANDvMijuuOCAu8sFQXeIQ7lTnHKH9uzVDsdqJ2bTDikbdkjpq3/7zoGzxO/dGx6KG0dxq1RNokAM7+UQJ2H+wyd7UqZ11T/ZldQSxW2JFTNI8SFFODGDmMnvdy9N1x36e/EpDMU5zkKqv1HJxCgVzvfrClb2I4/gz9FA4CFNK8rSuF+Fj/ebKUHab0YaxbOQCnBPzdTMORcLX2Q7exK6Ns4glihMFoo39kgThKLg2CP81YhMUkBacEg+QOq5fuEyJdw0LT9GLXX0atCuOEnEIKiuH9m04EGgP+ZwocowuB2OxDk8/6HROEvYryBfoMMBGOoPFdnOoQl/H4qXA/16P3jr5TW87YYGRHvM8O8gma+P7rgzcXbldi4qkHwjl0mf7dE79DyRhEvuZeI0tnI2IeVIhNfz0fwK0BMqYoJbfpPTzzoruQzmI9o3dxHUq/vi2YHYUphcJl+3BZ9P7CzjHGlglbvRdLZo/rivzjNTREp8+Jbe4/oWLKXHSI+Vx6Pe6iPjC83cVZM+gcPCcJ9jszVFxUyR88Kkvd7Bw+BSxCEYcv5DdFMv8SwhVVYqGxA2mkDdjUFIC1uzFfV8gOZflmM475Zqr/xdHpyxrNadwLySD38Yr+P3m+SpcN3qc9DEl+6kT5OishNLakDTLVlDkhbP4d3/pNYn7uv/PpR4bSkU/REr/Mo9g202mE4v0baCpizHztKq31Q3zb0D0NVykG+54eRJPcUVyEtFiI13qbiGbJ+E43+83qS1aLWW2QTrr5BYbwHc5dDdtXk6L5dsT1revj2ORX/e2ZdZCFx55S1OrdV5xmBzwPQbLU9SKzqCZGxGZk6PGwUXErp8bpy4mwJhxAXYqBVa+eq/w3iQM3G7zNWkMUhchgc/V/C+mfmJ85nboF9rzZDx/q8sDTT49pKCgyytO51neFUwFJnpbaGLZ5ABQLSJWG+mUKaYsGb88Xu3YWIWbjLDMHFc7HXS8VNLDY8BB+otX2UgKq/X9ibA4+Yy7TxbGOOpnR7vnSOQYFO1CE2gUwllrz13jjlSQVL3AcL21vsy1TKuSsjI8uJKQheUkKQPD0TXkGX7Gp6vUtm5lNbMnG+YPzmI4rV0ONRDtLiBAPJMQfk9eRFstgYz8d106UlXG7acOajSDz5XS16Gl8BEAjdU+QVR++USPurhlRAd1FLzFzgmtbvgorrqSdxbB9dq8qrBjMtBHdxGcS/atmL6Koq867bCIiVdke4woK7r3bMsuX3/WN9ZiWvPg2meOEgH8lOmh0silpE9qw3gKj+5+U4PgyGFh/S2pvBfYb2xHOT0I5No1Di7xFouPB9buP1KkrjlLQzX2HbHBRwvepRCY3o2rSyZoJhvfyaN1Z4p3qoMqwghBKKu38kVuaydB6lWTB2ilyuelA6hO3l5Or0HNbDN9UdJvaSUH+nyEa//AwLNK5j7UsHIAAAAAElFTkSuQmCC),
+    url(../images/header.jpg);
+  -webkit-background-size: auto, cover;
+  -moz-background-size: auto, cover;
+  background-size: auto, cover;
+  background-position: center, center;
+}
+
+#contentinfo {
+  padding: 24px;
+  line-height: 1.6;
+  background-color: $keyColor;
+  font-family: 'Cantarell', sans-serif;
+  color: #FFF;
+  a {
+    color: inherit;
+  }
+}

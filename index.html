@@ -3,49 +3,81 @@
 <head>
 <meta charset="utf-8">
 <title>kite</title>
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width">
+<meta name="description" content="Kite is flexible layout helper CSS library.">
+<!-- <meta name="viewport" content="width=device-width"> -->
 <link rel="shortcut icon" href="/favicon.ico">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link href='http://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
-<style>
-/* Fondation */
-html,body {
-  height: 100%;
-}
-body {
-  position: relative;
-  background-image:
-    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAHlBMVEUAAABVVVWqqqrU1NSUlJR/f38qKio/Pz/p6en////esGNyAAAACnRSTlMMDAwMDAwMDAwMS1ocSAAABENJREFUOMsFwUlDqlAYANDvMijuuOCAu8sFQXeIQ7lTnHKH9uzVDsdqJ2bTDikbdkjpq3/7zoGzxO/dGx6KG0dxq1RNokAM7+UQJ2H+wyd7UqZ11T/ZldQSxW2JFTNI8SFFODGDmMnvdy9N1x36e/EpDMU5zkKqv1HJxCgVzvfrClb2I4/gz9FA4CFNK8rSuF+Fj/ebKUHab0YaxbOQCnBPzdTMORcLX2Q7exK6Ns4glihMFoo39kgThKLg2CP81YhMUkBacEg+QOq5fuEyJdw0LT9GLXX0atCuOEnEIKiuH9m04EGgP+ZwocowuB2OxDk8/6HROEvYryBfoMMBGOoPFdnOoQl/H4qXA/16P3jr5TW87YYGRHvM8O8gma+P7rgzcXbldi4qkHwjl0mf7dE79DyRhEvuZeI0tnI2IeVIhNfz0fwK0BMqYoJbfpPTzzoruQzmI9o3dxHUq/vi2YHYUphcJl+3BZ9P7CzjHGlglbvRdLZo/rivzjNTREp8+Jbe4/oWLKXHSI+Vx6Pe6iPjC83cVZM+gcPCcJ9jszVFxUyR88Kkvd7Bw+BSxCEYcv5DdFMv8SwhVVYqGxA2mkDdjUFIC1uzFfV8gOZflmM475Zqr/xdHpyxrNadwLySD38Yr+P3m+SpcN3qc9DEl+6kT5OishNLakDTLVlDkhbP4d3/pNYn7uv/PpR4bSkU/REr/Mo9g202mE4v0baCpizHztKq31Q3zb0D0NVykG+54eRJPcUVyEtFiI13qbiGbJ+E43+83qS1aLWW2QTrr5BYbwHc5dDdtXk6L5dsT1revj2ORX/e2ZdZCFx55S1OrdV5xmBzwPQbLU9SKzqCZGxGZk6PGwUXErp8bpy4mwJhxAXYqBVa+eq/w3iQM3G7zNWkMUhchgc/V/C+mfmJ85nboF9rzZDx/q8sDTT49pKCgyytO51neFUwFJnpbaGLZ5ABQLSJWG+mUKaYsGb88Xu3YWIWbjLDMHFc7HXS8VNLDY8BB+otX2UgKq/X9ibA4+Yy7TxbGOOpnR7vnSOQYFO1CE2gUwllrz13jjlSQVL3AcL21vsy1TKuSsjI8uJKQheUkKQPD0TXkGX7Gp6vUtm5lNbMnG+YPzmI4rV0ONRDtLiBAPJMQfk9eRFstgYz8d106UlXG7acOajSDz5XS16Gl8BEAjdU+QVR++USPurhlRAd1FLzFzgmtbvgorrqSdxbB9dq8qrBjMtBHdxGcS/atmL6Koq867bCIiVdke4woK7r3bMsuX3/WN9ZiWvPg2meOEgH8lOmh0silpE9qw3gKj+5+U4PgyGFh/S2pvBfYb2xHOT0I5No1Di7xFouPB9buP1KkrjlLQzX2HbHBRwvepRCY3o2rSyZoJhvfyaN1Z4p3qoMqwghBKKu38kVuaydB6lWTB2ilyuelA6hO3l5Or0HNbDN9UdJvaSUH+nyEa//AwLNK5j7UsHIAAAAAElFTkSuQmCC),
-    url(images/header.jpg);
-  -webkit-background-size: auto, contain;
-  background-size: auto, cover;
-  background-position: center, center;
-}
+<link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=entypo">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cantarell:400,400italic|Bad+Script|Open+Sans:400italic,700italic,400,700">
+<link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/solarized_light.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+<link rel="stylesheet" href="kite.css">
+<link rel="stylesheet" href="styles/main.css">
+<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<header id="hero">
+  <div class="p-logo kite kite--position">
+    <h1 class="kite__item">
+      <img src="/images/logo.png" class="p-logo__symbol">
+      <span class="p-logo__type">Kite</span>
+    </h1>
+  </div>
+</header>
 
-/* kite*/
+<div id="main">
+  <section class="c-section">
+    <div class="kite kite--grid">
+      <div class="kite__item is-12of12">
+        <p class="p-lead">Kite is flexible layout helper CSS library.</p>
+        <div class="p-feature">
+          <ul class="kite kite--grid">
+            <li class="kite__item is-4of12">
+              <div class="p-feature__item">
+                <i class="c-ico p-feature__icon entypo-feather"></i>
+                <p class="p-feature__title">Simple</p>
+                <p class="p-feature__description">
+                  Kite use <b>`inline-block`</b>, not new new CSS Syntax.<br>
+                  It's ractical, simple to understand and easy to use.
+                </p>
+              </div>
+            </li>
+            <li class="kite__item is-4of12">
+              <div class="p-feature__item">
+                <i class="c-ico p-feature__icon entypo-shuffle"></i>
+                <p class="p-feature__title">Flexible</p>
+                <p class="p-feature__description">
+                  Kite behave like flexbox: justify-content, etc.<br>
+                  You could easily create complex modules.
+                </p>
+              </div>
+            </li>
+            <li class="kite__item is-4of12">
+              <div class="p-feature__item">
+                <i class="c-ico p-feature__icon entypo-flash"></i>
+                <p class="p-feature__title">Rapidly</p>
+                <p class="p-feature__description">
+                  Kite is based on OOCSS with MindBEMding.<br>
+                  It helps you to rapidly build your components.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <section class="p-note">
+          <div class="kite kite--grid has-gutter">
+            <div class="kite__item is-8of12">
+              <div class="p-note__code">
+                <pre><code class="language-markup">// kite core components
+// 1. Fill in `inline-block` gaps and then reset to `font-size` root font-size `rem`
+// 2. For Android: Android don&#039;t fill in `inline-block` gaps. `display: table;` magic fills in them.  
+// 3. For lte IE 8: IE 8 can&#039;t use `rem`. Use `medium` keyword for the purpose of reset `font-size`.
+
 .kite {
-  display: table; /* 2 */
-  font-size: 0; /* 1 */
-}
-
-.opera:-o-prefocus,
-.kite {
-  font-size: 0.5px; /* 3 */
-}
-
-.kite--center {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.kite--right {
-  text-align: right;
-}
-
-.kite--full {
+  display: table; // 2 <i class="c-ico c-ico--advantages entypo-flag"></i>
   width: 100%;
+  font-size: 0 !important; // 1 <i class="c-ico c-ico--caveats entypo-attention"></i>
 }
 
 .kite__item {
@@ -53,101 +85,601 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
-  font-size: medium; /* 4 */
-  font-size: 1rem; /* 1 */
+  font-size: medium; // 3
+  font-size: 1rem; // 1 <i class="c-ico c-ico--caveats entypo-attention"></i>
   vertical-align: top;
-}
+}</code></pre>
+              </div>
+            </div>
+            <div class="kite__item is-4of12">
+              <div class="p-note__points">
+                <div class="p-note__item">
+                  <h2 class="p-note__title p-note__title--advantages"><i class="c-ico entypo-flag"></i>Advantages:</h2>
+                  <p class="p-note__description">Works on most browsers including IE8, Android2.3.x.</p>
+                </div>
+                <div class="p-note__item">
+                  <h2 class="p-note__title p-note__title--caveats"><i class="c-ico entypo-attention"></i>Caveats:</h2>
+                  <p class="p-note__description">Reset font-size inheritance at kite conrainer.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
 
-.kite__item--full {
-  width: 100%;
-}
 
-.kite__item--top {
-  vertical-align: top !important;
-}
+  
+  <div class="c-section p-usage">
+    
+    <div class="kite kite--grid has-gutter">
+      <div class="kite__item is-12of12">
+        <h3 class="c-section__title">Usage</h3>
+      </div>
 
-.kite__item--middle {
-  vertical-align: middle !important;
-}
+      <div class="p-usage__item kite__item is-6of12">
+        <h3 class="p-usage__title"><span>Horizontal align</span></h3>
+        <div class="p-usage__result">
+          <div class="kite u-mbm">
+            <div class="kite__item">
+              <div class="p-usage__box">A</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">B</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">C</div>
+            </div>
+          </div>
 
-.kite__item--bottom {
-  vertical-align: bottom !important;
-}
+          <div class="kite kite--center u-mbm">
+            <div class="kite__item">
+              <div class="p-usage__box">A</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">B</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">C</div>
+            </div>
+          </div>
 
-.kite__item--left {
-  text-align: left !important;
-}
+          <div class="kite kite--right u-mbm">
+            <div class="kite__item">
+              <div class="p-usage__box">A</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">B</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">C</div>
+            </div>
+          </div>
+        </div>
+        <div class="p-usage__code">
+      <pre><code class="language-markup">&lt;div class=&quot;kite&quot;&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;A&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;B&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;C&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
-.kite__item--center {
-  text-align: center !important;
-}
+&lt;div class=&quot;kite kite--center&quot;&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;A&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;B&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;C&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
-.kite__item--right {
-  text-align: right !important;
-}
+&lt;div class=&quot;kite kite--right&quot;&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;A&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;B&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;C&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+      </div>
 
-.kite--position {
-  display: block !important;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  // z-index: 10000;
-  text-align: center;
-}
-.kite--position.is-fixed {
-  position: fixed;
-}
-.kite--position.is-hidden {
-  display: none !important;
-}
-.kite--position:after {
-  display: inline-block;
-  content: "";
-  height: 100%;
-  vertical-align: middle;
-}
-.kite--position > .kite__item {
-  vertical-align: middle;
-  text-align: left;
-}
+      <div class="p-usage__item kite__item is-6of12">
+        <h3 class="p-usage__title"><span>Vertical align</span></h3>
+        <div class="p-usage__result">
+          <div class="kite kite--top u-mbm">
+            <div class="kite__item">
+              <div class="p-usage__box">A</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box" style="height: 30px;line-height:0">B</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box" style="height: 30px;line-height:0">C</div>
+            </div>
+          </div>
+          <div class="kite kite--middle u-mbm">
+            <div class="kite__item">
+              <div class="p-usage__box">A</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box" style="height: 30px;line-height:0">B</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box" style="height: 30px;line-height:0">C</div>
+            </div>
+          </div>
+          <div class="kite kite--bottom u-mbm">
+            <div class="kite__item">
+              <div class="p-usage__box">A</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box" style="height: 30px;line-height:0">B</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box" style="height: 30px;line-height:0">C</div>
+            </div>
+          </div>
+        </div>
+        <div class="p-usage__code">
+      <pre><code class="language-markup">&lt;div class=&quot;kite kite--top&quot;&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;A&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;B&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;C&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;kite kite--middle&quot;&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;A&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;B&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;C&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;kite kite--bottom&quot;&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;A&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;B&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;C&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
 
-/* Object */
-.p-logo {
-  text-align: center;
-  color: #FFFFFF;
-}
-.p-logo__symbol {
-  margin-bottom: 36px;
-  border-radius: 100%;
-  padding: 24px;
-  width: 120px;
-  background-color: #47c9af;
-}
-.p-logo__symbol  > img {
-  height: 90%;
-}
-.p-logo__type {
-  display: block;
-  font-weight: 100;
-  font-size: 4.8em;
-  color: #FFFFFF;
-  font-family: 'Bad Script', 'cursive';
-}
-.p-logo__sub {
-  margin-top: 0.5em;
-  display: block;
-  font-size: 0.3em;
-}
-</style>
-</head>
-<body>
-<div class="kite kite--position">
-  <div class="kite__item kite__item--center p-logo">
-    <img src="images/logo.png" class="p-logo__symbol">
-    <h1 class="p-logo__type">Kite <span class="p-logo__sub">Coming soon.</span></h1>
+      <div class="p-usage__item kite__item is-6of12">
+        <h3 class="p-usage__title"><span>Nest</span></h3>
+        <div class="p-usage__result">
+          <div class="kite kite--center u-mbm">
+            <div class="kite__item">
+              <div class="p-usage__box">
+                A
+                <div class="kite kite--full">
+                  <div class="kite__item">
+                    <div class="p-usage__box">a</div>
+                  </div>
+                  <div class="kite__item">
+                    <div class="p-usage__box">b</div>
+                  </div>
+                  <div class="kite__item">
+                    <div class="p-usage__box">c</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-usage__code">
+      <pre><code class="language-markup">&lt;div class=&quot;kite kite--center&quot;&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;
+      A
+      &lt;div class=&quot;kite kite--full&quot;&gt;
+        &lt;div class=&quot;kite__item&quot;&gt;
+          &lt;div&gt;a&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;kite__item&quot;&gt;
+          &lt;div&gt;b&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;kite__item&quot;&gt;
+          &lt;div&gt;c&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+      </div>
+
+      <div class="p-usage__item kite__item is-6of12">
+        <h3 class="p-usage__title"><span>Justify</span></h3>
+        <div class="p-usage__result">
+          <div class="kite kite--justify u-mbm">
+            <div class="kite__item">
+              <div class="p-usage__box">A</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">B</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">C</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">D</div>
+            </div>
+          </div>
+          <div class="kite kite--justify u-mbm">
+            <div class="kite__item">
+              <div class="p-usage__box">A</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">BC</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">DE</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">FG</div>
+            </div>
+          </div>
+          <div class="kite kite--justify u-mbm">
+            <div class="kite__item">
+              <div class="p-usage__box">A</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">BC</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">DEF</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">GHIJ</div>
+            </div>
+          </div>
+        </div>
+        <div class="p-usage__code">
+      <pre><code class="language-markup">&lt;div class=&quot;kite kite--justify&quot;&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;A&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;B&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;C&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;D&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+      </div>
+
+      <div class="kite__item is-6of12">
+        <h3 class="p-usage__title"><span>Fill</span></h3>
+        <div class="p-usage__result">
+          <div class="kite kite--fill u-mbm">
+            <div class="kite__item">
+              <div class="p-usage__box">A</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">BC</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">DEF</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">GHIJ</div>
+            </div>
+          </div>
+          <div class="kite kite--fill is-equalize u-mbm">
+            <div class="kite__item">
+              <div class="p-usage__box">A</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">BC</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">DEF</div>
+            </div>
+            <div class="kite__item">
+              <div class="p-usage__box">GHIJ</div>
+            </div>
+          </div>
+        </div>
+        <div class="p-usage__code">
+      <pre><code class="language-markup">&lt;div class=&quot;kite kite--fill kite--full&quot;&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;A&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;BC&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;DEF&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;div&gt;GHIJ&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+      </div>
+
+      <div class="kite__item is-6of12">
+        <h3 class="p-usage__title"><span>Position</span></h3>
+        <div class="p-usage__result">
+          <div style="height:228px;position:relative" class="u-mbm">
+            <div class="kite kite--position">
+              <div class="kite__item">
+                <div class="p-usage__box">A</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-usage__code">
+      <pre><code class="language-markup">&lt;div style=&quot;position:relative;&quot;&gt;
+  &lt;div class=&quot;kite kite--position&quot;&gt;
+    &lt;div class=&quot;kite__item&quot;&gt;
+      &lt;div&gt;A&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="c-section p-example">
+    
+    <div class="kite kite--grid">
+      <div class="kite__item is-12of12">
+        <h3 class="c-section__title"><span>Example</span></h3>
+      </div>
+
+      <div class="p-example__item kite__item is-12of12">
+        <h3 class="p-example__title"><span>Pagenation</span></h3>
+        <div class="p-example__result is-x-pagenation u-mbm">
+          <ul class="x-pagenation kite kite--center">
+            <li class="kite__item">
+              <a href="#" class="x-pagenation__prev"><i class="c-ico entypo-left-open"></i></a>
+            </li>
+            <li class="kite__item">
+              <a href="#">1</a>
+            </li>
+            <li class="kite__item">
+              <a href="#">2</a>
+            </li>
+            <li class="kite__item">
+              <a href="#">3</a>
+            </li>
+            <li class="kite__item">
+              <span>...</span>
+            </li>
+            <li class="kite__item">
+              <a href="#">30</a>
+            </li>
+            <li class="kite__item">
+              <a href="#" class="x-pagenation__next"><i class="c-ico entypo-right-open"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="p-example__code">
+          <pre><code class="language-markup">&lt;ul class=&quot;x-pagenation kite kite--center&quot;&gt;
+  &lt;li class=&quot;kite__item&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;x-pagenation__prev&quot;&gt;&lt;i class=&quot;c-ico entypo-left-open&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;kite__item&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;kite__item&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;kite__item&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;kite__item&quot;&gt;
+    &lt;span&gt;...&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;kite__item&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;30&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;kite__item&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;x-pagenation__next&quot;&gt;&lt;i class=&quot;c-ico entypo-right-open&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="p-example__item kite__item is-12of12">
+        <h3 class="p-example__title"><span>Media</span></h3>
+        <div class="p-example__result is-x-media u-mbm">
+          <div class="x-quotes">
+            <figure class="x-quotes__item">
+              <div class="kite kite--position">
+                <div class="kite__item kite__item--center">
+                  <blockquote class="x-quotes__word">
+                    <p>Do The Interns get Glocks?</p>
+                  </blockquote>
+                  <figcaption class="x-quotes__cite">
+                    <cite>The Life Aquatic with Steve Zissou</cite>
+                  </figcaption>
+                </div>
+              </div>
+            </figure>
+            <div class="kite kite--middle kite--fill x-media">
+              <div class="kite__item x-media__figure">
+                <img src="http://www.fillmurray.com/124/124">
+              </div>
+              <div class="kite__item kite__item--full x-media__body">
+                <p class="x-media__name">Bill Marey</p>
+                <p class="x-media__birthday">1950/09/21 </p> 
+              </div>
+            </div>
+            <div class="x-comments">
+              <a href="#" class="kite kite--fill x-comment u-tdn">
+                <div class="kite__item kite__item--full x-comment__body">
+                  <p class="x-comment__text">Although one person I was with at the pre-screen hated it, I absolutely loved it. I think it will just be one of those kinds of films (but hey, I also loved...</p>
+                  <p class="x-comment__name">Nicolas Cage</p>
+                </div>
+                <div class="kite__item kite__item--right x-comment__media">
+                  <img src="http://placecage.com/100/100">
+                </div>
+              </a>
+              <a href="#" class="kite kite--fill x-comment u-tdn">
+                <div class="kite__item kite__item--full x-comment__body">
+                  <p class="x-comment__text">I cannot express in words how many different styles of film making Wes Anderson combined into this masterpiece. At one point hilarious, sometimes...</p>
+                  <p class="x-comment__name">Charlie Sheen</p>
+                </div>
+                <div class="kite__item kite__item--right x-comment__media">
+                  <img src="http://placesheen.com/100/100">
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="p-example__code">
+          <pre><code class="language-markup">&lt;div class=&quot;x-quotes&quot;&gt;
+  &lt;figure class=&quot;x-quotes__item&quot;&gt;
+    &lt;div class=&quot;kite kite--position&quot;&gt;
+      &lt;div class=&quot;kite__item kite__item--center&quot;&gt;
+        &lt;blockquote class=&quot;x-quotes__word&quot;&gt;
+          &lt;p&gt;Do The Interns get Glocks?&lt;/p&gt;
+        &lt;/blockquote&gt;
+        &lt;figcaption class=&quot;x-quotes__cite&quot;&gt;
+          &lt;cite&gt;The Life Aquatic with Steve Zissou&lt;/cite&gt;
+        &lt;/figcaption&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/figure&gt;
+  &lt;div class=&quot;kite kite--middle kite--fill x-media&quot;&gt;
+    &lt;div class=&quot;kite__item x-media__figure&quot;&gt;
+      &lt;img src=&quot;http://www.fillmurray.com/124/124&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;kite__item kite__item--full x-media__body&quot;&gt;
+      &lt;p class=&quot;x-media__name&quot;&gt;Bill Marey&lt;/p&gt;
+      &lt;p class=&quot;x-media__birthday&quot;&gt;1950/09/21 &lt;/p&gt; 
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;x-comments&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;kite kite--fill x-comment u-tdn&quot;&gt;
+      &lt;div class=&quot;kite__item kite__item--full x-comment__body&quot;&gt;
+        &lt;p class=&quot;x-comment__text&quot;&gt;Although one person...&lt;/p&gt;
+        &lt;p class=&quot;x-comment__name&quot;&gt;Nicolas Cage&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;kite__item kite__item--right x-comment__media&quot;&gt;
+        &lt;img src=&quot;http://placecage.com/100/100&quot;&gt;
+      &lt;/div&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;kite kite--fill x-comment u-tdn&quot;&gt;
+      &lt;div class=&quot;kite__item kite__item--full x-comment__body&quot;&gt;
+        &lt;p class=&quot;x-comment__text&quot;&gt;I cannot express...&lt;/p&gt;
+        &lt;p class=&quot;x-comment__name&quot;&gt;Charlie Sheen&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;kite__item kite__item--right x-comment__media&quot;&gt;
+        &lt;img src=&quot;http://placesheen.com/100/100&quot;&gt;
+      &lt;/div&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="p-example__item kite__item is-12of12">
+        <h3 class="p-example__title"><span>Modal</span></h3>
+        <div class="p-example__result is-x-modal u-mbm">
+          <div class="x-modal">
+            <div class="kite kite--position">
+              <div class="kite__item">
+                <button class="x-modal__button js-open-dialog" data-dialog="dialog"><i class="c-ico entypo-popup"></i></button>
+              </div>
+            </div>
+
+            <div class="kite kite--position is-hidden is-fixed x-modal__overlay js-close-dialog" id="dialog">
+              <div class="kite__item x-modal__dialog">
+                <p>
+                  <i class="c-ico entypo-cancel-circled"></i>Close me.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="p-example__code"><pre><code class="language-markup">&lt;div class=&quot;kite kite--position&quot;&gt;
+  &lt;div class=&quot;kite__item&quot;&gt;
+    &lt;button class=&quot;x-modal__button js-open-dialog&quot; data-dialog=&quot;dialog&quot;&gt;&lt;i class=&quot;c-ico entypo-popup&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;kite kite--position is-hidden is-fixed x-modal__overlay js-close-dialog&quot; id=&quot;dialog&quot;&gt;
+  &lt;div class=&quot;kite__item x-modal__dialog&quot;&gt;
+    &lt;p&gt;
+      &lt;i class=&quot;c-ico entypo-cancel-circled&quot;&gt;&lt;/i&gt;Close me.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+      </div>
+    </div>
   </div>
 </div>
+
+<footer id="contentinfo">
+  <div class="kite kite--center">
+    <div class="kite__item">
+      <p class="author">
+        Kite is crafted by <a href="http://github.com/hiloki">Hiroki Tani</a>.<br>
+        Cover 'kites' photo by <a href="https://www.flickr.com/photos/yoshikazut/10359735263/">Yoshikazu TAKADA</a>.
+
+      </p>
+      <ul class="kite kite--center p-footeLinks">
+        <li class="kite__item"><a href="https://github.com/hiloki/kitecss/issues">Issues</a></li>
+        <li class="kite__item"><a href="https://github.com/hiloki/kitecss/releases">Release</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$(function(){
+  var $openDialog = $('.js-open-dialog');
+  var $closeDialog = $('.js-close-dialog');
+
+  $openDialog.on('click', function(e) {
+    var target = $(this).data('dialog');
+    var $dialog = $('#' + target);
+
+    $dialog.removeClass('is-hidden');
+
+    $closeDialog.on('click', function(e) {
+      $dialog.addClass('is-hidden');
+    });
+  });
+  
+})
+</script>
 </body>
 </html>
