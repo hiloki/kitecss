@@ -1,4 +1,4 @@
-/*! Kite v0.1.0 | MIT License | github.com/kitecss */
+/*! Kite v0.2.0 | MIT License | github.com/kitecss */
 /*
 # kite core
 
@@ -62,6 +62,32 @@ If you need to fix this bug, use the following code.
   text-align: right !important; }
 
 /*
+## Sizing items
+
+```html
+<div class="kite">
+  <div class="kite__item">A</div>
+  <div class="kite__item kite__item--left">B</div>
+  <div class="kite__item kite__item--right">C</div>
+</div>
+```
+*/
+.kite__item--fifth {
+  width: 20%; }
+
+.kite__item--fourth {
+  width: 25%; }
+
+.kite__item--third {
+  width: 33.333%; }
+
+.kite__item--half {
+  width: 50%; }
+
+.kite__item--full {
+  width: 100%; }
+
+/*
 ## Vertical align items
 
 ```html
@@ -82,7 +108,7 @@ If you need to fix this bug, use the following code.
   vertical-align: bottom !important; }
 
 /*
-## Horizontal align element in items
+## Horizontal align content in items
 
 ```html
 <div class="kite">
@@ -100,6 +126,32 @@ If you need to fix this bug, use the following code.
 
 .kite__item--right {
   text-align: right !important; }
+
+/*
+## Intrinsic width 
+
+```html
+<div class="kite">
+  <div class="kite__item">A</div>
+  <div class="kite__item kite__item--left">B</div>
+  <div class="kite__item kite__item--right">C</div>
+</div>
+```
+*/
+.kite__item--fifth {
+  width: 20%; }
+
+.kite__item--fourth {
+  width: 25%; }
+
+.kite__item--third {
+  width: 33.333%; }
+
+.kite__item--half {
+  width: 50%; }
+
+.kite__item--full {
+  width: 100%; }
 
 /*
 ## Justify align items
@@ -149,17 +201,15 @@ If you need to fix this bug, use the following code.
 ```
 */
 .kite--position {
-  display: block !important;
+  display: block;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   text-align: center; }
-  .kite--position.is-fixed {
+  .kite--position.is-position-fixed {
     position: fixed; }
-  .kite--position.is-hidden {
-    display: none !important; }
   .kite--position:after {
     display: inline-block;
     content: "";
@@ -215,29 +265,3 @@ Use padding on a container(.kite), or `overflow-x:hidden` to protect against it.
   .kite--grid.has-gutter > .kite__item {
     padding-left: 10px;
     padding-right: 10px; }
-
-/*
-## Sizing items
-
-```html
-<div class="kite">
-  <div class="kite__item">A</div>
-  <div class="kite__item kite__item--left">B</div>
-  <div class="kite__item kite__item--right">C</div>
-</div>
-```
-*/
-.kite__item--fifth {
-  width: 20%; }
-
-.kite__item--fourth {
-  width: 25%; }
-
-.kite__item--third {
-  width: 33.333%; }
-
-.kite__item--half {
-  width: 50%; }
-
-.kite__item--full {
-  width: 100%; }

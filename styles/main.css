@@ -421,6 +421,7 @@ code {
         .p-example__result.is-x-modal .x-modal__button:active > .c-ico {
           vertical-align: 0; }
     .p-example__result.is-x-modal .x-modal__overlay {
+      position: fixed;
       z-index: 10000;
       background-color: rgba(0, 0, 0, 0.8); }
     .p-example__result.is-x-modal .x-modal__dialog {
@@ -436,6 +437,8 @@ code {
       font-size: 56px; }
       .p-example__result.is-x-modal .x-modal__dialog .c-ico {
         vertical-align: -2px; }
+    .p-example__result.is-x-modal .is-hidden {
+      display: none; }
 
 .p-example__code {
   overflow: auto;

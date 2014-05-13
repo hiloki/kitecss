@@ -450,6 +450,7 @@
       }
     }
     .x-modal__overlay {
+      position: fixed;
       z-index: 10000;
       background-color: rgba(0,0,0,0.8);
     }
@@ -467,6 +468,9 @@
       .c-ico {
         vertical-align: -2px;
       }
+    }
+    .is-hidden {
+      display: none;
     }
   }
   &.is-x-complex {
