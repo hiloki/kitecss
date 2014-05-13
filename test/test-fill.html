@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Fill items - Kite</title>
+<meta name="description" content="Kite is flexible layout helper CSS library.">
+<!-- <meta name="viewport" content="width=device-width"> -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"> -->
+<link rel="stylesheet" href="../kite.css">
+<style>
+body {
+  padding: 16px;
+}
+h1 {
+  border-left: 10px solid #999;
+  padding: 0.5em 20px;
+  background-color: #CCC;
+  font-size: 24px;
+}
+h2 {
+  border-left: 10px solid #CCC;
+  padding: 0.5em 20px;
+  background-color: #EEE;
+  font-size: 18px;
+}
+.fixture {
+  border: 1px solid #489;
+  margin-bottom: 16px;
+  min-height: 48px;
+  background-color: rgba(108,200,220,0.75);
+}
+.fixture--higher {
+  min-height: 96px;
+}
+.fixture--alert {
+  color: #C34;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<h1>.kite--fill</h1>
+
+<h2>Fill items</h2>
+
+<div class="kite kite--fill">
+  <div class="kite__item">
+    <div class="fixture">A Short content</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">A Middle content</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">A Long Long content</div>
+  </div>
+</div>
+
+<h2>Equalize width</h2>
+
+<div class="kite kite--fill is-equalize">
+  <div class="kite__item">
+    <div class="fixture">A Short content</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">A Middle content</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">A Long Long content</div>
+  </div>
+</div>
+
+<h2>Fill many items (cant't wrap items)</h2>
+
+<div class="kite kite--fill is-equalize">
+  <div class="kite__item">
+    <div class="fixture">1</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">2</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">3</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">4</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">5</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">6</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">7</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">8</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">9</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">10</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">11</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">12</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">13</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">14</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">15</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">16</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">17</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">18</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">19</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">20</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">21</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">22</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">23</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">24</div>
+  </div>
+</div>
+
+<h2>Media pattern</h2>
+
+<div class="kite kite--fill">
+  <div class="kite__item">
+    <img src="http://placehold.it/96x96/448899/FFFFFF">
+  </div>
+  <div class="kite__item kite__item--full">
+    <div class="fixture">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam odit voluptatum laboriosam quibusdam reiciendis architecto iure doloribus! Eius, exercitationem, in blanditiis pariatur eos labore quas perferendis beatae quia natus earum!</div>
+  </div>
+</div>
+
+<div class="kite kite--fill kite--middle">
+  <div class="kite__item kite__item--full">
+    <div class="fixture" style="margin-bottom: 0">(with .kite--middle) 
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam odit voluptatum laboriosam quibusdam reiciendis architecto iure doloribus! Eius, exercitationem, in blanditiis pariatur eos labore quas perferendis beatae quia natus earum!</div>
+  </div>
+  <div class="kite__item">
+    <img src="http://placehold.it/96x96/448899/FFFFFF">
+  </div>
+</div>
+
+</body>
+</html>

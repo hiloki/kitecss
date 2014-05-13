@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Justify items - Kite</title>
+<meta name="description" content="Kite is flexible layout helper CSS library.">
+<!-- <meta name="viewport" content="width=device-width"> -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"> -->
+<link rel="stylesheet" href="../kite.css">
+<style>
+body {
+  padding: 16px;
+}
+h1 {
+  border-left: 10px solid #999;
+  padding: 0.5em 20px;
+  background-color: #CCC;
+  font-size: 24px;
+}
+h2 {
+  border-left: 10px solid #CCC;
+  padding: 0.5em 20px;
+  background-color: #EEE;
+  font-size: 18px;
+}
+.fixture {
+  border: 1px solid #489;
+  margin-bottom: 16px;
+  min-height: 48px;
+  background-color: rgba(108,200,220,0.75);
+}
+.fixture--higher {
+  min-height: 96px;
+}
+.fixture--alert {
+  color: #C34;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<h1>.kite--justify</h1>
+
+<h2>Justify items</h2>
+
+<div class="kite kite--justify">
+  <div class="kite__item kite__item--fifth">
+    <div class="fixture">.kite__item--fifth (20%)</div>
+  </div>
+  <div class="kite__item kite__item--third">
+    <div class="fixture">.kite__item--third (33.333%)</div>
+  </div>
+  <div class="kite__item kite__item--fourth">
+    <div class="fixture">.kite__item--fourth (25%)</div>
+  </div>
+</div>
+
+<h2>Overflow items</h2>
+
+<div class="kite kite--justify">
+  <div class="kite__item kite__item--fifth">
+    <div class="fixture">.kite__item--fifth (20%)</div>
+  </div>
+  <div class="kite__item kite__item--third">
+    <div class="fixture">.kite__item--third (33.333%)</div>
+  </div>
+  <div class="kite__item kite__item--fourth">
+    <div class="fixture">.kite__item--fourth (25%)</div>
+  </div>
+  <div class="kite__item kite__item--fifth">
+    <div class="fixture">.kite__item--fifth (20%)</div>
+  </div>
+  <div class="kite__item kite__item--third">
+    <div class="fixture">.kite__item--third (33.333%)</div>
+  </div>
+  <div class="kite__item kite__item--fourth">
+    <div class="fixture">.kite__item--fourth (25%)</div>
+  </div>
+</div>
+
+</body>
+</html>
