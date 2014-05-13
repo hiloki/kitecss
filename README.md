@@ -1,3 +1,5 @@
+![](http://i.imgur.com/d3gaGff.png)
+
 # Kite
 
 Kite is flexible layout helper CSS library.
