@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Basic - Kite</title>
+<meta name="description" content="Kite is flexible layout helper CSS library.">
+<!-- <meta name="viewport" content="width=device-width"> -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"> -->
+<link rel="stylesheet" href="../kite.css">
+<style>
+body {
+  padding: 16px;
+}
+h1 {
+  border-left: 10px solid #999;
+  padding: 0.5em 20px;
+  background-color: #CCC;
+  font-size: 24px;
+}
+h2 {
+  border-left: 10px solid #CCC;
+  padding: 0.5em 20px;
+  background-color: #EEE;
+  font-size: 18px;
+}
+.fixture {
+  border: 1px solid #489;
+  margin-bottom: 16px;
+  min-height: 48px;
+  background-color: rgba(108,200,220,0.75);
+}
+.fixture--higher {
+  min-height: 96px;
+}
+</style>
+</head>
+<body>
+
+<h1>.kite</h1>
+
+<h2>Horizontal default align</h2>
+
+<div class="kite">
+  <div class="kite__item">
+    <div class="fixture">1</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">2</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">3</div>
+  </div>
+</div>
+
+<h2>Horizontal align center</h2>
+
+<div class="kite kite--center">
+  <div class="kite__item">
+    <div class="fixture">1</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">2</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">3</div>
+  </div>
+</div>
+
+<h2>Horizontal align right</h2>
+
+<div class="kite kite--right">
+  <div class="kite__item">
+    <div class="fixture">1</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">2</div>
+  </div>
+  <div class="kite__item">
+    <div class="fixture">3</div>
+  </div>
+</div>
+
+<h2>Horizontal align with extended items</h2>
+
+<div class="kite">
+  <div class="kite__item kite__item--full">
+    <div class="fixture">.kite__item--full</div>
+  </div>
+  <div class="kite__item kite__item--half">
+    <div class="fixture">.kite__item--half</div>
+  </div>
+  <div class="kite__item kite__item--half">
+    <div class="fixture">.kite__item--half</div>
+  </div>
+  <div class="kite__item kite__item--third">
+    <div class="fixture">.kite__item--third</div>
+  </div>
+  <div class="kite__item kite__item--third">
+    <div class="fixture">.kite__item--third</div>
+  </div>
+  <div class="kite__item kite__item--third">
+    <div class="fixture">.kite__item--third</div>
+  </div>
+  <div class="kite__item kite__item--fourth">
+    <div class="fixture">.kite__item--fourth</div>
+  </div>
+  <div class="kite__item kite__item--fourth">
+    <div class="fixture">.kite__item--fourth</div>
+  </div>
+  <div class="kite__item kite__item--fourth">
+    <div class="fixture">.kite__item--fourth</div>
+  </div>
+  <div class="kite__item kite__item--fourth">
+    <div class="fixture">.kite__item--fourth</div>
+  </div>
+  <div class="kite__item kite__item--fifth">
+    <div class="fixture">.kite__item--fifth</div>
+  </div>
+  <div class="kite__item kite__item--fifth">
+    <div class="fixture">.kite__item--fifth</div>
+  </div>
+  <div class="kite__item kite__item--fifth">
+    <div class="fixture">.kite__item--fifth</div>
+  </div>
+  <div class="kite__item kite__item--fifth">
+    <div class="fixture">.kite__item--fifth</div>
+  </div>
+  <div class="kite__item kite__item--fifth">
+    <div class="fixture">.kite__item--fifth</div>
+  </div>
+</div>
+
+<h2>Horizontal align content in items</h2>
+
+<div class="kite">
+  <div class="kite__item kite__item--third kite__item--left">
+    <div class="fixture">.kite__item--left</div>
+  </div>
+  <div class="kite__item kite__item--third kite__item--center">
+    <div class="fixture">.kite__item--center</div>
+  </div>
+  <div class="kite__item kite__item--third kite__item--right">
+    <div class="fixture">.kite__item--right</div>
+  </div>
+</div>
+
+<h2>Vertical default align</h2>
+
+<div class="kite">
+  <div class="kite__item kite__item--third">
+    <div class="fixture fixture--higher">1</div>
+  </div>
+  <div class="kite__item kite__item--third">
+    <div class="fixture">2</div>
+  </div>
+  <div class="kite__item kite__item--third">
+    <div class="fixture">3</div>
+  </div>
+</div>
+
+<h2>Vertical middle align</h2>
+
+<div class="kite kite--middle">
+  <div class="kite__item kite__item--third">
+    <div class="fixture fixture--higher">1</div>
+  </div>
+  <div class="kite__item kite__item--third">
+    <div class="fixture">2</div>
+  </div>
+  <div class="kite__item kite__item--third">
+    <div class="fixture">3</div>
+  </div>
+</div>
+
+<h2>Vertical bottom align</h2>
+
+<div class="kite kite--bottom">
+  <div class="kite__item kite__item--third">
+    <div class="fixture fixture--higher">1</div>
+  </div>
+  <div class="kite__item kite__item--third">
+    <div class="fixture">2</div>
+  </div>
+  <div class="kite__item kite__item--third">
+    <div class="fixture">3</div>
+  </div>
+</div>
+
+</body>
+</html>

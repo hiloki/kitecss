@@ -1,4 +1,4 @@
-/*! Kite v0.1.0 | MIT License | github.com/kitecss */
+/*! Kite v0.2.0 | MIT License | github.com/kitecss */
 
 /*
 # kite core
@@ -74,6 +74,39 @@ If you need to fix this bug, use the following code.
 }
 
 /*
+## Sizing items
+
+```html
+<div class="kite">
+  <div class="kite__item">A</div>
+  <div class="kite__item kite__item--left">B</div>
+  <div class="kite__item kite__item--right">C</div>
+</div>
+```
+*/
+
+.kite__item--fifth {
+  width: 20%;
+}
+
+.kite__item--fourth {
+  width: 25%;
+}
+
+.kite__item--third {
+  width: 33.333%;
+}
+
+.kite__item--half {
+  width: 50%;
+}
+
+.kite__item--full {
+  width: 100%;
+}
+
+
+/*
 ## Vertical align items
 
 ```html
@@ -104,7 +137,7 @@ If you need to fix this bug, use the following code.
 }
 
 /*
-## Horizontal align element in items
+## Horizontal align content in items
 
 ```html
 <div class="kite">
@@ -125,6 +158,38 @@ If you need to fix this bug, use the following code.
 
 .kite__item--right {
   text-align: right !important;
+}
+
+/*
+## Intrinsic width 
+
+```html
+<div class="kite">
+  <div class="kite__item">A</div>
+  <div class="kite__item kite__item--left">B</div>
+  <div class="kite__item kite__item--right">C</div>
+</div>
+```
+*/
+
+.kite__item--fifth {
+  width: 20%;
+}
+
+.kite__item--fourth {
+  width: 25%;
+}
+
+.kite__item--third {
+  width: 33.333%;
+}
+
+.kite__item--half {
+  width: 50%;
+}
+
+.kite__item--full {
+  width: 100%;
 }
 
 /*
@@ -184,7 +249,7 @@ If you need to fix this bug, use the following code.
 */
 
 .kite--position {
-  display: block !important;
+  display: block;
   position: absolute;
   top: 0;
   right: 0;
@@ -192,11 +257,8 @@ If you need to fix this bug, use the following code.
   left: 0;
   // z-index: 10000;
   text-align: center;
-  &.is-fixed {
+  &.is-position-fixed {
     position: fixed;
-  }
-  &.is-hidden {
-    display: none !important;
   }
   &:after {
     display: inline-block;
@@ -213,6 +275,9 @@ If you need to fix this bug, use the following code.
 /*
 ## Grid layout items
 
+NOTE: this can trigger a horizontal scrollbar if the component is as wide as the viewport.
+Use padding on a container(.kite), or `overflow-x:hidden` to protect against it.
+
 ```html
 <div class="kite kite--grid has-gutter">
   <div class="kite__item is-4of12">A</div>
@@ -224,7 +289,7 @@ If you need to fix this bug, use the following code.
 
 .kite--grid {
   $unit: 12;
-  $gutter: 1rem;
+  $gutter: 10px;
   > .kite__item {
     @for $i from 1 through $unit { 
       &.is-#{$i}of#{$unit} {
@@ -233,42 +298,13 @@ If you need to fix this bug, use the following code.
     }
   }
   &.has-gutter {
+    display: block;
+    width: auto;
+    margin-left: -$gutter;
+    margin-right: -$gutter;
     > .kite__item {
       padding-left: $gutter;
       padding-right: $gutter;
     }
   }
-}
-
-
-/*
-## Sizing items
-
-```html
-<div class="kite">
-  <div class="kite__item">A</div>
-  <div class="kite__item kite__item--left">B</div>
-  <div class="kite__item kite__item--right">C</div>
-</div>
-```
-*/
-
-.kite__item--fifth {
-  width: 20%;
-}
-
-.kite__item--fourth {
-  width: 25%;
-}
-
-.kite__item--third {
-  width: 33.333%;
-}
-
-.kite__item--half {
-  width: 50%;
-}
-
-.kite__item--full {
-  width: 100%;
 }

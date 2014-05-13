@@ -1,4 +1,5 @@
 /*! Kite v0.2.0 | MIT License | github.com/kitecss */
+
 /*
 # kite core
 
@@ -14,10 +15,12 @@
 </div>
 ```
 */
+
 .kite {
-  display: table;
+  display: table; // 2
   width: 100%;
-  font-size: 0 !important; }
+  font-size: 0 !important; // 1
+}
 
 /*
 Opera 12 has causing too wide gaps bug by setting `font-size: 0'.
@@ -30,17 +33,22 @@ If you need to fix this bug, use the following code.
 }
 ```
 */
+
 .kite__item {
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
-  font-size: medium;
-  font-size: 1rem;
-  vertical-align: top; }
+  font-size: medium; // 3
+  font-size: 1rem; // 1
+  vertical-align: top;
+}
+
 
 /*
 # kite functions
 */
+
 /*
 ## Horizontal align items
 
@@ -52,40 +60,18 @@ If you need to fix this bug, use the following code.
 </div>
 ```
 */
+
 .kite--left {
-  text-align: left !important; }
+  text-align: left !important;
+}
 
 .kite--center {
-  text-align: center !important; }
+  text-align: center !important;
+}
 
 .kite--right {
-  text-align: right !important; }
-
-/*
-## Sizing items
-
-```html
-<div class="kite">
-  <div class="kite__item">A</div>
-  <div class="kite__item kite__item--left">B</div>
-  <div class="kite__item kite__item--right">C</div>
-</div>
-```
-*/
-.kite__item--fifth {
-  width: 20%; }
-
-.kite__item--fourth {
-  width: 25%; }
-
-.kite__item--third {
-  width: 33.333%; }
-
-.kite__item--half {
-  width: 50%; }
-
-.kite__item--full {
-  width: 100%; }
+  text-align: right !important;
+}
 
 /*
 ## Vertical align items
@@ -98,14 +84,24 @@ If you need to fix this bug, use the following code.
 </div>
 ```
 */
-.kite--top > .kite__item {
-  vertical-align: top !important; }
 
-.kite--middle > .kite__item {
-  vertical-align: middle !important; }
+.kite--top {
+  > .kite__item {
+    vertical-align: top !important;
+  }
+}
 
-.kite--bottom > .kite__item {
-  vertical-align: bottom !important; }
+.kite--middle {
+  > .kite__item {
+    vertical-align: middle !important;
+  }
+}
+
+.kite--bottom {
+  > .kite__item {
+    vertical-align: bottom !important;
+  }
+}
 
 /*
 ## Horizontal align content in items
@@ -118,14 +114,18 @@ If you need to fix this bug, use the following code.
 </div>
 ```
 */
+
 .kite__item--left {
-  text-align: left !important; }
+  text-align: left !important;
+}
 
 .kite__item--center {
-  text-align: center !important; }
+  text-align: center !important;
+}
 
 .kite__item--right {
-  text-align: right !important; }
+  text-align: right !important;
+}
 
 /*
 ## Intrinsic width 
@@ -138,20 +138,26 @@ If you need to fix this bug, use the following code.
 </div>
 ```
 */
+
 .kite__item--fifth {
-  width: 20%; }
+  width: 20%;
+}
 
 .kite__item--fourth {
-  width: 25%; }
+  width: 25%;
+}
 
 .kite__item--third {
-  width: 33.333%; }
+  width: 33.333%;
+}
 
 .kite__item--half {
-  width: 50%; }
+  width: 50%;
+}
 
 .kite__item--full {
-  width: 100%; }
+  width: 100%;
+}
 
 /*
 ## Justify align items
@@ -164,14 +170,17 @@ If you need to fix this bug, use the following code.
 </div>
 ```
 */
+
 .kite--justify {
   display: block;
   text-align: justify;
-  text-justify: distribute-all-lines; }
-  .kite--justify:after {
+  text-justify: distribute-all-lines;
+  &:after {
     content: '';
     display: inline-block;
-    width: 100%; }
+    width: 100%;
+  }
+}
 
 /*
 ## Fill items
@@ -184,10 +193,15 @@ If you need to fix this bug, use the following code.
 </div>
 ```
 */
-.kite--fill.is-equalize {
-  table-layout: fixed; }
-.kite--fill > .kite__item {
-  display: table-cell; }
+
+.kite--fill {
+  &.is-equalize {
+    table-layout: fixed;
+  }
+  > .kite__item {
+    display: table-cell;
+  }
+}
 
 /*
 ## Absolute position items
@@ -200,6 +214,7 @@ If you need to fix this bug, use the following code.
 </div>
 ```
 */
+
 .kite--position {
   display: block;
   position: absolute;
@@ -207,17 +222,22 @@ If you need to fix this bug, use the following code.
   right: 0;
   bottom: 0;
   left: 0;
-  text-align: center; }
-  .kite--position.is-position-fixed {
-    position: fixed; }
-  .kite--position:after {
+  // z-index: 10000;
+  text-align: center;
+  &.is-position-fixed {
+    position: fixed;
+  }
+  &:after {
     display: inline-block;
     content: "";
     height: 100%;
-    vertical-align: middle; }
-  .kite--position > .kite__item {
     vertical-align: middle;
-    text-align: left; }
+  }
+  > .kite__item {
+    vertical-align: middle;
+    text-align: left;
+  }
+}
 
 /*
 ## Grid layout items
@@ -233,35 +253,25 @@ Use padding on a container(.kite), or `overflow-x:hidden` to protect against it.
 </div>
 ```
 */
-.kite--grid > .kite__item.is-1of12 {
-  width: 8.33333%; }
-.kite--grid > .kite__item.is-2of12 {
-  width: 16.66667%; }
-.kite--grid > .kite__item.is-3of12 {
-  width: 25%; }
-.kite--grid > .kite__item.is-4of12 {
-  width: 33.33333%; }
-.kite--grid > .kite__item.is-5of12 {
-  width: 41.66667%; }
-.kite--grid > .kite__item.is-6of12 {
-  width: 50%; }
-.kite--grid > .kite__item.is-7of12 {
-  width: 58.33333%; }
-.kite--grid > .kite__item.is-8of12 {
-  width: 66.66667%; }
-.kite--grid > .kite__item.is-9of12 {
-  width: 75%; }
-.kite--grid > .kite__item.is-10of12 {
-  width: 83.33333%; }
-.kite--grid > .kite__item.is-11of12 {
-  width: 91.66667%; }
-.kite--grid > .kite__item.is-12of12 {
-  width: 100%; }
-.kite--grid.has-gutter {
-  display: block;
-  width: auto;
-  margin-left: -10px;
-  margin-right: -10px; }
-  .kite--grid.has-gutter > .kite__item {
-    padding-left: 10px;
-    padding-right: 10px; }
+
+.kite--grid {
+  unit = 6;
+  gutter = 10px;
+  > .kite__item {
+    for i in (1..unit) { 
+      &.is-{i}of{unit} {
+        width: round((i / unit) * 100%, 3);
+      }
+    }
+  }
+  &.has-gutter {
+    display: block;
+    width: auto;
+    margin-left: - gutter;
+    margin-right: - gutter;
+    > .kite__item {
+      padding-left: gutter;
+      padding-right: gutter;
+    }
+  }
+}

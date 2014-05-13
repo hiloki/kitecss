@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Justify items - Kite</title>
+<meta name="description" content="Kite is flexible layout helper CSS library.">
+<!-- <meta name="viewport" content="width=device-width"> -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"> -->
+<link rel="stylesheet" href="../kite.css">
+<style>
+body {
+  padding: 16px;
+}
+h1 {
+  border-left: 10px solid #999;
+  padding: 0.5em 20px;
+  background-color: #CCC;
+  font-size: 24px;
+}
+h2 {
+  border-left: 10px solid #CCC;
+  padding: 0.5em 20px;
+  background-color: #EEE;
+  font-size: 18px;
+}
+.fixture {
+  border: 1px solid #489;
+  margin-bottom: 16px;
+  min-height: 48px;
+  background-color: rgba(108,200,220,0.75);
+}
+.fixture--parent {
+  position: relative;
+  min-height: 200px;
+}
+.fixture-overlay {
+  background-color: rgba(0,0,0,0.8);
+}
+.fixture--higher {
+  min-height: 96px;
+}
+.fixture--alert {
+  color: #C34;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<h1>.kite--position</h1>
+
+<h2>Absolute position items</h2>
+
+<div class="fixture fixture--parent">
+  <div class="kite kite--position">
+    <div class="kite__item">
+      <div class="fixture">1</div>
+    </div>
+  </div>
+</div>
+
+<h2>Fixed position items</h2>
+
+<button type="button" id="js-position-button">Click me</button>
+
+<div class="kite kite--position is-position-fixed fixture-overlay" id="js-position-layer">
+  <div class="kite__item kite__item--half">
+    <div class="fixture">
+      <h2>Close me</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, nemo autem eaque voluptatem vero. Omnis, sequi, quidem dolor quod maiores ducimus et laboriosam necessitatibus molestiae eum eaque repellendus quas explicabo.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+var button = document.getElementById('js-position-button');
+var layer = document.getElementById('js-position-layer');
+
+button.addEventListener('click',function(e){
+  console.log(button);
+  layer.style.display = 'block';
+});
+
+layer.addEventListener('click',function(e){
+  console.log(button);
+  layer.style.display = 'none';
+});
+
+</script>
+</body>
+</html>
