@@ -1,6 +1,6 @@
 # Kite
 
-Kite is flexible layout helper CSS library.
+Kite is a flexible layout helper CSS library.
 
 # Demo
 
