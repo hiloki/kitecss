@@ -463,7 +463,7 @@
 
       <div class="p-example__item kite__item is-12of12">
         <h3 class="p-example__title"><span>Pagenation</span></h3>
-        <div class="p-example__result is-x-pagenation u-mbm">
+        <div class="p-example__result is-x-pagenation u-mbm js-example">
           <ul class="x-pagenation kite kite--center">
             <li class="kite__item">
               <a href="#" class="x-pagenation__prev"><i class="c-ico entypo-left-open"></i></a>
@@ -517,7 +517,7 @@
 
       <div class="p-example__item kite__item is-12of12">
         <h3 class="p-example__title"><span>Media</span></h3>
-        <div class="p-example__result is-x-media u-mbm">
+        <div class="p-example__result is-x-media u-mbm js-example">
           <div class="x-quotes">
             <figure class="x-quotes__item">
               <div class="kite kite--position">
@@ -611,7 +611,7 @@
 
       <div class="p-example__item kite__item is-12of12">
         <h3 class="p-example__title"><span>Modal</span></h3>
-        <div class="p-example__result is-x-modal u-mbm">
+        <div class="p-example__result is-x-modal u-mbm js-example">
           <div class="x-modal">
             <div class="kite kite--position">
               <div class="kite__item">
@@ -666,16 +666,21 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
 $(function(){
+  var $example = $('.js-example');
   var $openDialog = $('.js-open-dialog');
   var $closeDialog = $('.js-close-dialog');
 
-  $openDialog.on('click', function(e) {
+  $example.find('a').on('click', function(e){
+    e.preventDefault();
+  })
+
+  $openDialog.on('click', function() {
     var target = $(this).data('dialog');
     var $dialog = $('#' + target);
 
     $dialog.removeClass('is-hidden');
 
-    $closeDialog.on('click', function(e) {
+    $closeDialog.on('click', function() {
       $dialog.addClass('is-hidden');
     });
   });
