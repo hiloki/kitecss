@@ -1,0 +1,13 @@
+{
+  "name": "kitecss",
+  "version": "0.2.0",
+  "authors": "Hiroki Tani",
+  "description": "Kite is a flexible layout helper CSS library.",
+  "main": "kite.css",
+  "license": "MIT",
+  "ignore": [
+    "test",
+    "CHANGELOG.md",
+    "LICENSE.md"
+  ]
+}
