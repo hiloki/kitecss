@@ -1,3 +1,9 @@
+## 0.3.0 (2014-12-0)
+
+- Setup component.json
+- Setup bower.json
+- Remove 'box-sizing'vendor prefixes
+
 ## 0.2.0 (2014-05-13)
 
 - Add tests
