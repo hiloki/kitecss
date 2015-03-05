@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git://github.com/hiloki/kitecss.git"
   },
-  "author": "hiloki",
+  "author": "Hiroki Tani",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hiloki/kitecss/issues"
