@@ -1,0 +1,24 @@
+{
+  "name": "kitecss",
+  "description": "Kite is a flexible layout helper CSS library.",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "wraith capture test/config.yaml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hiloki/kitecss.git"
+  },
+  "author": "hiloki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hiloki/kitecss/issues"
+  },
+  "homepage": "https://github.com/hiloki/kitecss",
+  "devDependencies": {
+    "phantomjs": "^1.9.16",
+    "slimerjs": "^0.9.5"
+  }
+}
