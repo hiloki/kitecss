@@ -278,10 +278,10 @@
 .p-example__result {
   border-radius: 3px;
   background-color: $matColor;
-  &.is-x-pagenation {
+  &.is-x-pagination {
     padding: 24px 0;
     background-color: #E74C3C;
-    .x-pagenation {
+    .x-pagination {
       a,span {
         display: block;
         border-left: 1px solid rgba(255,255,255,0.5);
@@ -308,10 +308,10 @@
         }
       }
     }
-    .x-pagenation__prev {
+    .x-pagination__prev {
       border-radius: 100% 0 0 100%;
     }
-    .x-pagenation__next {
+    .x-pagination__next {
       border-radius: 0 100% 100% 0;
     }
   }

@@ -277,10 +277,10 @@ code {
 .p-example__result {
   border-radius: 3px;
   background-color: #e8f8f5; }
-  .p-example__result.is-x-pagenation {
+  .p-example__result.is-x-pagination {
     padding: 24px 0;
     background-color: #E74C3C; }
-    .p-example__result.is-x-pagenation .x-pagenation a, .p-example__result.is-x-pagenation .x-pagenation span {
+    .p-example__result.is-x-pagination .x-pagination a, .p-example__result.is-x-pagination .x-pagination span {
       display: block;
       border-left: 1px solid rgba(255, 255, 255, 0.5);
       border-right: 1px solid rgba(230, 200, 180, 0.5);
@@ -294,18 +294,18 @@ code {
       color: inherit;
       text-decoration: none;
       text-align: center; }
-      .p-example__result.is-x-pagenation .x-pagenation a > .c-ico, .p-example__result.is-x-pagenation .x-pagenation span > .c-ico {
+      .p-example__result.is-x-pagination .x-pagination a > .c-ico, .p-example__result.is-x-pagination .x-pagination span > .c-ico {
         vertical-align: bottom; }
-      .p-example__result.is-x-pagenation .x-pagenation a:hover, .p-example__result.is-x-pagenation .x-pagenation span:hover {
+      .p-example__result.is-x-pagination .x-pagination a:hover, .p-example__result.is-x-pagination .x-pagination span:hover {
         background: -webkit-linear-gradient(top, #FFFFFF 0%, #FFFFFE 100%);
         background: linear-gradient(to bottom, #FFFFFF 0%, #FFFFFE 100%); }
-      .p-example__result.is-x-pagenation .x-pagenation a:active, .p-example__result.is-x-pagenation .x-pagenation span:active {
+      .p-example__result.is-x-pagination .x-pagination a:active, .p-example__result.is-x-pagination .x-pagination span:active {
         position: relative;
         top: 1px;
         box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25); }
-    .p-example__result.is-x-pagenation .x-pagenation__prev {
+    .p-example__result.is-x-pagination .x-pagination__prev {
       border-radius: 100% 0 0 100%; }
-    .p-example__result.is-x-pagenation .x-pagenation__next {
+    .p-example__result.is-x-pagination .x-pagination__next {
       border-radius: 0 100% 100% 0; }
   .p-example__result.is-x-media {
     padding: 24px 0;
