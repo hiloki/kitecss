@@ -1,5 +1,6 @@
 {
   "name": "kitecss",
+  "version": "0.3.0",
   "description": "Kite is a flexible layout helper CSS library.",
   "directories": {
     "test": "test"
