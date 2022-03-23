@@ -1,5 +1,9 @@
 ![](http://i.imgur.com/d3gaGff.png)
 
+# Deprecated
+
+You should use CSS Flexbox and CSS Grid.
+
 # Kite
 
 Kite is flexible layout helper CSS library.
